@@ -1,0 +1,7 @@
+def sam(*lis):
+    n=[]
+    for i in lis:
+        if type(i) == list :
+            n.append(i)
+    return n
+sam(1,2,3,4,[1,2,34,5,6,"gobi"])

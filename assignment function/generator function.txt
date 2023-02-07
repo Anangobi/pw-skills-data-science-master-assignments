@@ -1,0 +1,9 @@
+def fib(n):
+    a=0
+    b=1
+    for i in range(0,n):
+        yield a
+        a,b=b,a+b
+n=int(input("Enter the number"))
+for i in fib(n):
+    print(i)
