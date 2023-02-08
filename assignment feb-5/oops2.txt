@@ -1,0 +1,24 @@
+class test:
+    def __init__(self , name , email , phn , rollno):
+        self.name=name
+        self.email=email
+        self.phn=phn
+        self.rollno=rollno
+    def details(self):
+        return self.name, self.email,self.phn, self.rollno
+suriya=test("suriya","suriyamass875@gmail.com", 9090, 51)
+bharat=test("bharat","bharat.d.it.2019@snsct.org",4803,7)
+suriya.details()
+bharat.details()
+class test2:
+    def __init__(ref , name , email , phn , rollno):
+        ref.n=name
+        ref.e=email
+        ref.p=phn
+        ref.r=rollno
+    def details(ref):
+        return ref.n, ref.e,ref.p, ref.r
+suriya=test2("suriya","suriyamass875@gmail.com", 9090, 51)
+bharat=test2("bharat","bharat.d.it.2019@snsct.org",4803,7)
+suriya.details()
+bharat.details()
