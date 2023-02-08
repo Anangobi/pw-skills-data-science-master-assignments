@@ -1,0 +1,22 @@
+st="gobi anan"
+l=lambda st:len(st)
+l(st)
+max=lambda a,b:a if a>b else b
+max(20,10)
+li=[1,2,3,4,5,6]
+lambda x: x**2, li
+l1=li
+l2=[6,7,8,9,10,11]
+list(map(lambda x,y: x+y,l1,l2))
+f= lambda x,y: x+y
+list (map(f,l1,l2))
+from functools import reduce
+reduce(lambda x,y: x+y,l1)
+reduce(f,l1)
+reduce(lambda x,y:x if x>y else y , l1)
+list(filter(lambda x:x%2==0,l1))
+list(filter(lambda x:x%2!=0,l1))
+l3=[-1,3,-3,-4,2,4,5,-2,-3,-5,0]
+list(filter(lambda x: x<0,l3))
+l4=["gobi anan","bharat","suriya","gayathiri","aadish","parasuraman"]
+list(filter(lambda x:len(x)>6,l4))
