@@ -1,0 +1,47 @@
+Q1. Explain Class and Object with respect to Object-Oriented Programming. Give a suitable example.
+	A class is a user-defined blueprint or prototype from which objects are created. Classes provide a means of bundling data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made. Each class instance can have attributes attached to it for maintaining its state. Class instances can also have methods for modifying their state.
+	To understand the need for creating a class in Python let’s consider an example, let’s say you wanted to track the number of dogs that may have different attributes like breed, and age. If a list is used, the first element could be the dog’s breed while the second element could represent its age. Let’s suppose there are 100 different dogs, then how would you know which element is supposed to be which? What if you wanted to add other properties to these dogs? This lacks organization and it’s the exact need for classes.
+SYNTAX FOR CLASS:
+  class ClassName:
+    # Statement
+	An Object is an instance of a Class. A class is like a blueprint while an instance is a copy of the class with actual values. It’s not an idea anymore, it’s an actual dog, like a dog of breed pug who’s seven years old. You can have many dogs to create many different instances, but without the class as a guide, you would be lost, not knowing what information is required
+SYNTAX FOR OBJECT:
+	obj = ClassName()
+	print(obj.atrr)
+Q2. Name the four pillars of OOPs.
+	The four pillars are
+	*Abstraction
+	*Polymorphism
+	*Encapsulation
+	*Inheritance
+Q3. Explain why the __init__() function is used. Give a suitable example.
+	This function mainly used to pass the arguments while creating an object for the class.
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+p1 = Person("John", 36)
+
+print(p1.name)
+print(p1.age)
+	in the above example we can see that we pass the arguments to the function while creating the object itself.
+Q4. Why self is used in OOPs?
+	self represents the instance of the class. By using the “self”  we can access the attributes and methods of the class in python. It binds the attributes with the given arguments.
+Q5. What is inheritance? Give an example for each type of inheritance.
+	Inheritance is defined as the mechanism of inheriting the properties of the base class to the child class. Here we a going to see the types of inheritance in Python.
+
+Single Inheritance: 
+	Single inheritance enables a derived class to inherit properties from a single parent class, thus enabling code reusability and the addition of new features to existing code.
+
+Multiple Inheritance: 
+	When a class can be derived from more than one base class this type of inheritance is called multiple inheritances. In multiple inheritances, all the features of the base classes are inherited into the derived class.
+
+Multilevel Inheritance :
+	In multilevel inheritance, features of the base class and the derived class are further inherited into the new derived class. This is similar to a relationship representing a child and a grandfather. 
+
+Hierarchical Inheritance: 
+	When more than one derived class are created from a single base this type of inheritance is called hierarchical inheritance. In this program, we have a parent (base) class and two child (derived) classes.
+
+Hybrid Inheritance: 
+	Inheritance consisting of multiple types of inheritance is called hybrid inheritance.
