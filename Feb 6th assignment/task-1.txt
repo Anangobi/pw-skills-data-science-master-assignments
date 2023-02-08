@@ -1,0 +1,25 @@
+from functools import reduce
+class product:
+    def lis(self,l):
+        n=[]
+        for i in l:
+            if type(i)==int or type(i)==float:
+                n.append(i)
+            elif type(i)== list or type(i)== set or type(i)== tuple:
+                for j in i:
+                    if(type(j)!=str):
+                        n.append(j)
+            if type(i)==dict:
+                for key in i:
+                    if(type(i[key])==int or i[key]==float):
+                        n.append(i[key])
+                    elif(type(i[key]==list or i[key]==set or i[key]==tuple)):
+                        for j in i:
+                            n.append(j)
+            if type(i)==bool:
+                n.append(i)
+        return(reduce(lambda x,y: x*y if type(y)==int or type(y)==bool or type(y)==float else x*1,n))
+n1 = (1,2,3,4, [44,55,66, True], False, (34,56,78,89,34), {1,2,3,3,2,1}, {1:34, "key2": [55, 67, 78, 89], 4: (45,
+22, 61, 34)})
+gobi=product()
+gobi.lis(n1)
