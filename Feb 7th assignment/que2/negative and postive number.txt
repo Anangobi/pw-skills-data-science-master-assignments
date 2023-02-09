@@ -1,0 +1,12 @@
+def pos(i):
+    postive=[]
+    if i>=0:
+        postive.append(i)
+    return postive
+tuple(filter(pos,lis))
+def neg(i):
+    negative=[]
+    if i>=0:
+        negative.append(i)
+    return negative
+tuple(filter(neg,lis))

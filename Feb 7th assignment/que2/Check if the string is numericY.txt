@@ -1,0 +1,8 @@
+def num(s):
+    if s.isnumeric():
+        print(True)
+    else:
+        print(False)
+lis=['gobi','go1123','gayathiri','1234']
+for i in lis:
+    print(num(i)

@@ -1,0 +1,10 @@
+def fil(s):
+    if s[0]=='g':
+        print('yes')
+    else:
+        print('No')
+
+lis=['gobi','gowtham','gayathiri','bharat']            
+a=filter(fil,lis)
+for i in a:
+    print(i)

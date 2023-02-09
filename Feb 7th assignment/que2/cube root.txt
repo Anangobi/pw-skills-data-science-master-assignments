@@ -1,0 +1,2 @@
+lis=[125,8,27]
+tuple(map(lambda x: x**(1/3),lis))
