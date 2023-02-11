@@ -1,0 +1,14 @@
+class parents:
+    def __init__(self):
+        self.a="You are inside the parents class"
+    def out(self):
+        print(self.a)
+class child(parents):
+    def __init__(self):
+        self.b="You are inside the child class"
+    def show(self):
+        print(self.b)
+obj_parents=parents
+obj_child=child
+obj_parents.out
+obj_child.show

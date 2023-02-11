@@ -1,0 +1,10 @@
+class example:
+    def __init__(self,x):
+        self.x=x
+    def getage(self):
+        return self.x
+    def setage(self,y):
+        self.x=y
+obj_ex=example(0)
+obj_ex.setage(20)
+obj_ex.getage()

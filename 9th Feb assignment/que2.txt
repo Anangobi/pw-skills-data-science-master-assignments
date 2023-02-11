@@ -1,0 +1,13 @@
+class vehicle(object):
+    def __init__(self,name_of_vehicle, max_speed, average_of_vehicle):
+        self.name=name_of_vehicle
+        self.speed=max_speed
+        self.average=average_of_vehicle
+
+class car(vehicle):
+    def seat(self, cap):
+        self.capacity=cap
+        print(self.capacity+" " + self.name)
+
+obj_car=car("INNOVA",200,2000)
+obj_car.seat("8")

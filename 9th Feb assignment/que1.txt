@@ -1,0 +1,7 @@
+class vehicle(object):
+    def __init__(self,name_of_vehicle, max_speed, average_of_vehicle):
+        self.name=name_of_vehicle
+        self.speed=max_speed
+        self.average=average_of_vehicle
+obj_vechicle=vehicle("INNOVA",200,2000)
+obj_vechicle.name

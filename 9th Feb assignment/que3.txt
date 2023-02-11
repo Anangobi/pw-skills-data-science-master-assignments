@@ -1,0 +1,11 @@
+class a1:
+    def sam1(self):
+        print("output1")
+class a2:
+    def sam2(self):
+        print("output2")
+class fin(a1,a2):
+    def inherit(self):
+        pass
+obj_fin=fin
+obj_fin.sam2
