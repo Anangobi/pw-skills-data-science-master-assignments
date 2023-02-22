@@ -1,0 +1,69 @@
+Q1. Explain why we have to use the Exception class while creating a Custom Exception.
+Note: Here Exception class refers to the base class for all the exceptions.
+
+	Python provides a lot of built-in exception classes that outputs an error when something in your code goes wrong. The error classes can also be used to handle those specific exceptions using try-except blocks.
+
+Q2. Write a python program to print Python Exception Hierarchy.
+
+	import inspect
+import pydoc
+
+def print_class_hierarchy(classes=()):
+    td = pydoc.TextDoc()
+    tree_list_of_lists = inspect.getclasstree(classes)
+    print(td.formattree(tree_list_of_lists, 'NameSpaceName'))
+
+Q3. What errors are defined in the ArithmeticError class? Explain any two with an example.
+
+	The ArithmeticError consists of three exceptions.
+
+		ZeroDivisionError
+		FloatingPointError
+		OverFlowError
+ZeroDivisionError
+	The ZeroDivisionError is a type of exception raised when a number is divided by 0. In this type of error, the denominator should not be 0. If the value of the denominator is changed and other than 0, then the code works correctly. This is not a critical error. It is just an indication that a number is divided by 0.
+
+Floating point error
+	This type of error is raised when a number has large decimal digits. A well-known example is when we divide 10 by 3. The decimal places go on like 3.333… hence this error can be rounded to the nearest number.
+
+Q4. Why LookupError class is used? Explain with an example KeyError and IndexError.
+	
+	Lookup Error in Python The LookupError exception in Python forms the base class for all exceptions that are raised when an index or a key is not found for a sequence or dictionary respectively. You can use LookupError exception class to handle both IndexError and KeyError exception classes.
+
+x = (1, 2, 3, 4)
+try:
+    print(x[10])
+except LookupError as e:
+    print(f"{e}, {e.__class__}")
+
+pylenin_info = {'name': 'Lenin Mishra',
+                'age': 28,
+                'language': 'Python'}
+user_input = input('What do you want to learn about Pylenin==> ')
+
+try:
+    print(f'{user_input} is {pylenin_info[user_input]}')
+except LookupError as e:
+    print(f'{e}, {e.__class__}')
+
+
+Q5. Explain ImportError. What is ModuleNotFoundError?
+
+	The first reason for ModuleNotFoundError: No module named is the module name is incorrect. For example, let's try to import the os module with double "s"and see what will happen: As you can see, we got ModuleNotFoundError:
+
+	You can now use sys.path.append to append the path you pass into the function to the folders Python looks for the modules (Please note that thats not permanent). If the path of your modules should be static, you should consider putting these in the Lib folder. If that path is relative to your file you could look for the path of the file you execute from, and then append the sys.path relative to your file, but i reccomend using relative imports
+
+
+Q6. List down some best practices for exception handling in python.
+	x = (1, 2, 3, 4)
+try:
+    print(x[10])
+except LookupError as e:
+    print(f"{e}, {e.__class__}")
+
+x = "Pylenin"
+try:
+    print(x[10])
+except LookupError as e:
+    print(f"{e}, {e.__class__}")
+
