@@ -1,0 +1,55 @@
+Q1.	
+	Multithreading is defined as the ability of a processor to execute multiple threads concurrently
+
+	In a simple, single-core CPU, it is achieved using frequent switching between threads. This is termed as context switching. In context switching, the state of a thread is saved and state of another thread is loaded whenever any interrupt (due to I/O or manually set) takes place. Context switching takes place so frequently that all the threads appear to be running parallelly (this is termed as multitasking).
+
+Q2.
+
+	Python threading allows you to have different parts of your program run concurrently and can simplify your design
+	A thread is a separate flow of execution. This means that your program will have two things happening at once. But for most Python 3 implementations the different threads do not actually execute at the same time: they merely appear to
+
+threading.activeCount() − Returns the number of thread objects that are active.
+threading.currentThread() − Returns the number of thread objects in the caller's thread control.
+threading.enumerate() − Returns a list of all thread objects that are currently active.
+
+Q3.
+run()  − The run() method is the entry point for a thread.
+start()  − The start() method starts a thread by calling the run method.
+join([time])  − The join() waits for threads to terminate.
+isAlive()  − The isAlive() method checks whether a thread is still executing.
+
+Q4.
+
+import threading
+import time
+lis1=[1,2,3,4,5]
+def sqr(n):
+    print("The square of the multiple threading is %d"%(n*n))
+    time.sleep(1)
+def cub(n):
+    print("The cube of the multiple threading is %d"%(n**3))
+    time.sleep(1)
+thread1=[threading.Thread(target=sqr,args=(i,)) for i in lis1]
+thread2=[threading.Thread(target=cub,args=(j,)) for j in lis1]
+for t in thread1:
+    t.start()
+for t in thread2:
+    t.start()
+
+Q5.
+
+The main advantages of multithreaded programming, regardless of programming language are:
+
+If you have a system with multiple CPUs or cores, then you can have all CPUs executing application code all at the same time. So for example, if you have a system with four CPUs, a process could potentially run up to 4 times faster with multithreading (though it is highly unlikely it will be that fast in most cases, since typical applications require threads to synchronize their access to shared resources, creation contention).
+
+If the process needs to block for some reason (disk I/O, user input, network I/O) then while a thread or threads are blocked waiting for I/O completion other thread(s) can be doing other work. Note that for this type of concurrency you do not need multiple CPUs or cores, a process running on a single CPU can also benefit greatly from threading.
+
+Q6.
+
+Race Conditions
+
+A race condition occurs when two threads access a shared variable at the same time. The first thread reads the variable, and the second thread reads the same value from the variable. Then the first thread and second thread perform their operations on the value, and they race to see which thread can write the value last to the shared variable. The value of the thread that writes its value last is preserved, because the thread is writing over the value that the previous thread wrote.
+
+Deadlocks
+
+A deadlock occurs when two threads each lock a different variable at the same time and then try to lock the variable that the other thread already locked. As a result, each thread stops executing and waits for the other thread to release the variable. Because each thread is holding the variable that the other thread wants, nothing occurs, and the threads remain deadlocked.
