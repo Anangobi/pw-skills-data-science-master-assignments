@@ -1,0 +1,64 @@
+Q1. What is multiprocessing in python? Why is it useful?
+
+	Multiprocessing refers to the ability of a system to support more than one processor at the same time. Applications in a multiprocessing system are broken to smaller routines that run independently. The operating system allocates these threads to the processors improving performance of the system.
+	Consider a computer system with a single processor. If it is assigned several processes at the same time, it will have to interrupt each task and switch briefly to another, to keep all of the processes going.
+This situation is just like a chef working in a kitchen alone. He has to do several tasks like baking, stirring, kneading dough, etc.
+
+Q2. What are the differences between multiprocessing and multithreading?
+	
+	Multiprocessing refers to using multiple CPUs/processors in a single system. Multiple CPUs can act in a parallel fashion and execute multiple processes together. A task is divided into multiple processes that run on multiple processors. When the task is over, the results from all processors are compiled together to provide the final output. Multiprocessing increases the computing power to a great extent. Symmetric multiprocessing and asymmetric multiprocessing are two types of multiprocessing.
+
+	Multithreading refers to multiple threads being executed by a single CPU in such a way that each thread is executed in parallel fashion and CPU/processor is switched between them using context switch. Multithreading is a technique to increase the throughput of a processor. In multithreading, accessing memory addresses is easy because all of the threads share the same parent process.
+
+Q3. Write a python code to create a process using the multiprocessing module.
+
+def square(lis):
+    lis1=[]
+    for i in lis:
+        lis1.append(i**2)
+    print(lis1)
+if __name__=="__main__":
+    lis=[1,2,3,4,5,6,7,8,9]
+    m=multiprocessing.Process(target=square, args=(lis,))
+    print("the sample program for the assignment is")
+    m.start()
+    m.join()
+
+Q4. What is a multiprocessing pool in python? Why is it used?
+
+	In the Process class, we had to create processes explicitly. However, the Pool class is more convenient, and you do not have to manage it manually. The syntax to create a pool object is multiprocessing.Pool(processes, initializer, initargs, maxtasksperchild, context). 
+
+	All the arguments are optional. processes represent the number of worker processes you want to create. The default value is obtained by os.cpu_count(). The second initializer argument is a function used for initialization, and the initargs are the arguments passed to it.
+
+Q5. How can we create a pool of worker processes in python using the multiprocessing module?
+
+	we import the Pool class from the multiprocessing module. In the main function, we create an object of the Pool class. The pool.map() takes the function that we want parallelize and an iterable as the arguments. It runs the given function on every item of the iterable.  It also takes an optional chunksize argument, which splits the iterable into the chunks equal to the given size and passes each chunk as a separate task. The pool.close() is used to reject new tasks.
+
+Q6. Write a python program to create 4 processes, each process should print a different number using the
+multiprocessing module in python.
+
+	import multiprocessing
+def addition(add):
+    lis1=[]
+    for i in add:
+        lis1.append(i+10)
+    print(lis1)
+def multiple(mul):
+    lis2=[]
+    for i in mul:
+        lis2.append(i*10)
+    print(lis2)
+def division(div):
+    lis3=[]
+    for i in div:
+        lis3.append(i/10)
+    print(lis3)
+if __name__=="__main__":
+    lis=[10,20,30,40]
+    m=multiprocessing.Process(target=addition,args=(lis,))
+    m2=multiprocessing.Process(target=multiple,args=(lis,))
+    m3=multiprocessing.Process(target=division,args=(lis,))
+    m.start()
+    m2.start()
+    m3.start()
+	
