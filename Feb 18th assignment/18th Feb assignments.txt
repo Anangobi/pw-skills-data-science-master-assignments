@@ -1,0 +1,44 @@
+Q1. What is an API? Give an example, where an API is used in real life.
+
+	APIs are used to abstract the complexity of back-end logic in a variety of software systems. APIs access the data of a particular software and work to make sure it is compatible with interacting software. End users do not have direct interactions with APIs but rather reap the benefits once their request is fulfilled.
+Twitter Bots
+Log-In Using XYZ
+Weather Snippers
+Pay with PayPal
+Google Maps
+Travel Booking
+E-Commerc
+
+Q2. Give advantages and disadvantages of using API.
+
+	There is a lot of conveniences and advantages to APIs, but business leaders should also be aware of the disadvantages. As a single point of entry, an API is a gateway and can become a hacker's primary target. Once the API is compromised, all other applications and systems become vulnerable.
+
+Nine of the top ten vulnerabilities listed in the OWASP Top 10 now mention APIs — and since APIs can be accessed over the internet, they will have all the same disadvantages as any other Internet-based resource.  APIs are vulnerable to man-in-the-middle attacks, CSRF attacks, XSS attacks, SQL injection, and DDoS attacks.
+
+Q3. What is a Web API? Differentiate between API and Web API.
+
+	A Web services are any bit of services that makes it accessible over the Internet and normalizes its correspondence through XML encoding. A customer conjures web services by sending a solicitation (for the most part as an XML message), and the services send back an XML response. Web services summon communication over a network, with HTTP as the most widely recognized methods for the network between the two frameworks. Web services are equivalent to SOA (Services Oriented Architecture) and fundamentally depend on measures, for example, XML-RPC and SOAP (Simple Object Access Protocol).
+
+	API stands for Application Programming Interface. It is a collection of communication conventions and subroutines used by various programs to communicate between them. A developer can utilize different API apparatuses to make its program simpler and less complex. Likewise, an API encourages the developers with a proficient method to build up their product programs. Thus, in simple terms, an API determines how programming segments ought to associate with one another. It is a set of protocols and schedules, and its reactions are returned as JSON or XML in data. APIs can utilize any kind of communication convention and are not restricted similarly as a web service is.
+
+Q4. Explain REST and SOAP Architecture. Mention shortcomings of SOAP.
+
+	SOAP stands for Simple Object Access Protocol is a network platform used in a web service to exchange or communicate data between two different machines on a network. It uses the XML format of data to transfer messages over the HTTP protocol. In Web services, SOAP allows the user request to interact with other programming languages. In this way, it provides a way to communicate between applications running on different platforms (Operating system), with programming languages and technologies used in web service.
+
+	REST stands for REpresentational State Transfer. It is an architectural style that provides standards between computer systems on a web service. It is a set of constraints used to create a lightweight, scalable, and maintainable web service that facilitates easy communication. It is a set of constraints used to create a lightweight, scalable and maintainable web service that makes easy communication with each other. All web services are based on the REST; hence it is called a RESTful service. The purpose of developing a RESTful web service is to make the web service more effective. The Roy Fielding develops it in 2000, who also developed the HTTP protocol. It does not depend on a specific protocol to use, but it's used HTTP/HTTPS.
+
+Q5. Differentiate between REST and SOAP.
+
+ REST
+REST web services are fast as compared to SOAP because it has no restriction like SOAP. It consumes less bandwidth and resources.
+It is an architectural style for creating lightweight, scalable and maintainable web service.
+It is a language and platform-independent web service that can be written in any programming language and run on Windows, Linux and Mac.
+REST web service helps the client machine access different formats of data such as HTML, JSON, XML, etc. from the webserver.
+
+SOAP protocols are:
+
+It is recommended by the W3C consortium for the web services and application programming interface to communicate with the client application.
+It is a lightweight communication protocol used for exchanging data between two machines over the network.
+It is a platform-independent operating system that can run on Linux, Windows and macOS.
+SOAP uses a default protocol to send the message over a network, and all web applications also support it.
+It has an XML format that includes an envelope, header, body, and fault element as a SOAP message during the message's processing
