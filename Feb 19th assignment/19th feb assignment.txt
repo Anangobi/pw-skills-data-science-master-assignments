@@ -1,0 +1,17 @@
+Q1. What is Flask Framework? What are the advantages of Flask Framework?
+	Like most widely used python libraries, the Flask package is installable from the Python Package Index (PPI). Let’s create a directory first (In this chapter, we have created a directory called flaskProject) then created a virtual environment (and called it as flaskEnv) where all the project related dependencies will be loaded (including flask). You can also install flask-sqlalchemy so that your flask application has a simple way to communicate with SQL database.
+
+	Flask is considered the best framework for light web application serving, it is a lightweight framework and can also be useful to the developer if he or she chooses a web interface to the default system based UI.
+
+
+Easy to understand development
+The Flask framework is easy to understand, that is why it is best for beginners. Its simplicity gives you the opportunity to understand it better and learn from it. There are interesting features to use in the framework. The simplicity in the flask framework enables the developer to navigate around and create the application easily.
+
+It is very flexible and easy.
+There are only a handful of parts of flask that cannot be changed or altered because of its simplicity and minimalism. This means that almost all the parts of flask are open to change, unlike some other web frameworks.
+
+Flask comes with a template engine that lets you use the same user interface for multiple pages. Python can insert variables into the templates.
+
+Testing
+Using Flask for web development allows for unit testing through its integrated support, built-in development server, fast debugger, and restful request dispatching. It is lightweight to enable you to transit into a web framework easily with some extension.
+
