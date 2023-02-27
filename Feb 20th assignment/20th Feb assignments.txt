@@ -1,0 +1,18 @@
+Q1. Explain GET and POST methods.
+
+HTTP GET: The Hypertext Transfer Protocol(HTTP) Get method is mainly used at the client (Browser) side to send a request to a specified server to get certain data or resources. Using this method the server should only let us receive the data and not change its state. Hence it is only used to view something and not to change it. Get method is one of the most used HTTP method. The request parameter of the get method is appended to the URL. Get request is better for the data which does not need to be secure (It means the data which does not contain images or word documents).
+
+HTTP POST: The Hypertext Transfer Protocol(HTTP) Post method is mainly used at the client (Browser) side to send data to a Specified server in order to create or rewrite a particular resource/data. This data sent to the server is stored in the request body of the HTTP request. Post method eventually leads to the creation of a new resource or updating an existing one. Due to this dynamic use, it is one of the most used HTTP methods. It is not one of the most secure methods because the data that is been sent is included in the body of the request and not in the URL. Post request is better for the data which needs to be secure (It means the data which contains images or word documents).
+
+Q2. Why is request used in Flask?
+
+	In the client-server architecture, the request object contains all the data that is sent from the client to the server. As we have already discussed in the tutorial, we can retrieve the data at the server side using the HTTP methods.
+
+Q3. Why is redirect() used in Flask?
+
+	A redirect is used in the Flask class to send the user to a particular URL with the status code. conversely, this status code additionally identifies the issue. When we access a website, our browser sends a request to the server, and the server replies with what is known as the HTTP status code, which is a three-digit number.
+
+Q4. What are templates in Flask? Why is the render_template() function used?
+
+	A template is just a text file which contains static HTML code as well as some special markup denoting dynamic content that will be known at the time of the request. The process which replaces the dynamic markup and generates flat HTML page is known as template rendering. Flask comes bundled with a template engine called Jinja which does the actual job of parsing templates and converting them to flat HTML page.
+
