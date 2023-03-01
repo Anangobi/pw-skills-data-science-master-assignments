@@ -1,0 +1,44 @@
+Q1. What is Web Scraping? Why is it Used? Give three areas where Web Scraping is used to get data.
+
+	Web scraping is the process of collecting structured web data in an automated manner. It’s also widely known as web data extraction or web data scraping.
+
+Some of the main use cases of web scraping include price monitoring, price intelligence, news monitoring, lead generation, and market research among many others.
+
+In general, web scraping is used by people and businesses who want to make use of publicly available web data to generate valuable insights and make smarter decisions.
+
+If you’ve ever copied and pasted information from a website, you’ve performed the same function as any web scraper, only you manually went through the data scraping process. Unlike the tedious process of extracting data by yourself, web scraping uses intelligent automation to retrieve hundreds, millions, or even billions of data points from the internet’s seemingly endless frontier.
+
+Price Intelligence
+Market research
+Alternative data for finance
+
+Q2. What are the different methods used for Web Scraping?
+
+	Web Scrapers can be divided on the basis of many different criteria, including Self-built or Pre-built Web Scrapers, Browser extension or Software Web Scrapers, and Cloud or Local Web Scrapers.
+
+You can have Self-built Web Scrapers but that requires advanced knowledge of programming. And if you want more features in your Web Scraper, then you need even more knowledge. On the other hand, pre-built Web Scrapers are previously created scrapers that you can download and run easily. These also have more advanced options that you can customize.
+
+Browser extensions Web Scrapers are extensions that can be added to your browser. These are easy to run as they are integrated with your browser, but at the same time, they are also limited because of this. Any advanced features that are outside the scope of your browser are impossible to run on Browser extension Web Scrapers. But Software Web Scrapers don’t have these limitations as they can be downloaded and installed on your computer. These are more complex than Browser web scrapers, but they also have advanced features that are not limited by the scope of your browser.
+
+Cloud Web Scrapers run on the cloud, which is an off-site server mostly provided by the company that you buy the scraper from. These allow your computer to focus on other tasks as the computer resources are not required to scrape data from websites. Local Web Scrapers, on the other hand, run on your computer using local resources. So, if the Web scrapers require more CPU or RAM, then your computer will become slow and not be able to perform other tasks.
+
+Why is Python a popular programming language for Web Scraping?
+Python seems to be in fashion these days! It is the most popular language for web scraping as it can handle most of the processes easily. It also has a variety of libraries that were created specifically for Web Scraping. Scrapy is a very popular open-source web crawling framework that is written in Python. It is ideal for web scraping as well as extracting data using APIs. Beautiful soup is another Python library that is highly suitable for Web Scraping. It creates a parse tree that can be used to extract data from HTML on a website. Beautiful soup also has multiple features for navigation, searching, and modifying these parse trees.
+
+Q3. What is Beautiful Soup? Why is it used?
+
+	The incredible amount of data on the Internet is a rich resource for any field of research or personal interest. To effectively harvest that data, you’ll need to become skilled at web scraping. The Python libraries requests and Beautiful Soup are powerful tools for the job. If you like to learn with hands-on examples and have a basic understanding of Python and HTML, then this tutorial is for you.
+
+	Beautiful Soup is a Python library for parsing structured data. It allows you to interact with HTML in a similar way to how you interact with a web page using developer tools. The library exposes a couple of intuitive functions you can use to explore the HTML you received. To get started, use your terminal to install Beautiful Soup:
+
+
+Q4. Why is flask used in this Web Scraping project?
+
+	Flask is a lightweight framework to build websites. We’ll use this to parse our collected data and display it as HTML in a new HTML file. The requests module allows us to send http requests to the website we want to scrape.
+
+Q5. Write the names of AWS services used in this project. Also, explain the use of each service.
+
+code pipline:
+	code pipline act as the pipline code which is used to connect the github and deploys with the system provider to the bean stalk in aws.
+bean stalk:
+	bean stalk is the service provided by the aws which is used to create the system environment to run the application.
