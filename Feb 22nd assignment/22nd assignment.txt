@@ -1,0 +1,65 @@
+Q1.Create a Pandas Series that contains the following data: 4, 8, 15, 16, 23, and 42. Then, print the series.
+
+import pandas as pd
+
+data = [4, 8, 15, 16, 23, 42]
+series = pd.Series(data)
+
+print(series)
+
+Q2. Create a variable of list type containing 10 elements in it, and apply pandas.Series function on the
+variable print it.
+
+import pandas as pd
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+my_series = pd.Series(my_list)
+
+print(my_series)
+
+
+Q3.
+
+import pandas as pd
+
+data = {'name': ['alice', 'bob' , 'claire'], 'age': [25, 30, 27], 'gender': ['female', 'male' , 'female']}
+df = pd.DataFrame(data)
+
+print(df)
+
+Q4. What is ‘DataFrame’ in pandas and how is it different from pandas.series? Explain with an example.
+
+DataFrame in Pandas is a two-dimensional table that consists of rows and columns, where each column can contain different data types. It is a fundamental data structure for data analysis in Python.
+
+Series in Pandas, on the other hand, is a one-dimensional labeled array that can hold any data type. It is similar to a column in a DataFrame, but with a single column only.
+
+
+Q5. What are some common functions you can use to manipulate data in a Pandas DataFrame? Can
+you give an example of when you might use one of these functions?
+
+head() and tail(): These functions allow you to view the first or last few rows of a DataFrame, respectively. For example, df.head(5) would display the first 5 rows of a DataFrame.
+
+describe(): This function provides descriptive statistics for all numerical columns in a DataFrame. For example, df.describe() would display the count, mean, standard deviation, minimum, and maximum values for each numerical column.
+
+loc[] and iloc[]: These functions allow you to access specific rows and columns in a DataFrame. loc[] is used with label-based indexing, while iloc[] is used with integer-based indexing. For example, df.loc[0, 'column_name'] would retrieve the value in the first row and the specified column.
+
+groupby(): This function groups the data in a DataFrame based on one or more columns, allowing you to perform operations on subsets of the data. For example, df.groupby('column_name').mean() would group the data by the values in the specified column and then calculate the mean of each group.
+
+drop(): This function allows you to remove specific rows or columns from a DataFrame. For example, df.drop(['column1', 'column2'], axis=1) would remove the specified columns from the DataFrame.
+
+fillna(): This function allows you to replace missing values in a DataFrame with a specified value or method. For example, df.fillna(0) would replace all missing values in the DataFrame with 0.
+
+merge(): This function allows you to combine two or more DataFrames into a single DataFrame based on a common column. For example, pd.merge(df1, df2, on='column_name') would merge df1 and df2 on the specified column.
+
+Q6. Which of the following is mutable in nature Series, DataFrame, Panel?
+
+In Pandas, both Series and DataFrame are mutable, while Panel is deprecated and no longer recommended for use in version 1.0.0 or later.
+
+Q7. Create a DataFrame using multiple Series. Explain with an example.
+
+import pandas as pd
+name = pd.Series(['Alice', 'Bob', 'Charlie'])
+age = pd.Series([25, 30, 35])
+gender = pd.Series(['female', 'male', 'male'])
+df = pd.DataFrame({'name': name, 'age': age, 'gender': gender})
+print(df)
