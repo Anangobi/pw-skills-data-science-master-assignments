@@ -1,0 +1,149 @@
+Q1. List any five functions of the pandas library with execution.
+
+read_csv(): This function is used to read a CSV file and create a pandas DataFrame object.
+
+groupby(): This function is used to group data in a pandas DataFrame by one or more columns.
+
+fillna(): This function is used to fill missing values in a pandas DataFrame.
+
+concat(): This function is used to concatenate pandas objects along a particular axis.
+
+pivot_table(): This function is used to create a pivot table from a pandas DataFrame.
+
+
+Q2. Given a Pandas DataFrame df with columns 'A', 'B', and 'C', write a Python function to re-index the
+DataFrame with a new index that starts from 1 and increments by 2 for each row.
+
+import pandas as pd
+
+def reindex_df(df):
+    df.reset_index(drop=True, inplace=True)
+    new_index = pd.RangeIndex(start=1, stop=len(df)*2, step=2)
+    df.index = new_index
+    return df
+df = pd.DataFrame({'A': [1, 2, 3, 4], 'B': [5, 6, 7, 8], 'C': [9, 10, 11, 12]})
+df = reindex_df(df)
+print(df)
+
+Q3. You have a Pandas DataFrame df with a column named 'Values'. Write a Python function that
+iterates over the DataFrame and calculates the sum of the first three values in the 'Values' column. The
+function should print the sum to the console.
+For example, if the 'Values' column of df contains the values [10, 20, 30, 40, 50], your function should
+calculate and print the sum of the first three values, which is 60.
+
+
+import pandas as pd
+
+data = {'values': [10, 20, 30, 40, 50]}
+df = pd.DataFrame(data)
+sum1 = sum(df['values'][:3])
+print(sum1)
+
+Q4. Given a Pandas DataFrame df with a column 'Text', write a Python function to create a new column
+'Word_Count' that contains the number of words in each row of the 'Text' column.
+
+import pandas as pd
+
+sentences = [
+    "The quick brown fox jumps over the lazy dog.",
+    "She sells seashells by the seashore.",
+    "Peter Piper picked a peck of pickled peppers.",
+    "How much wood would a woodchuck chuck if a woodchuck could chuck wood?",
+    "I scream, you scream, we all scream for ice cream."
+]
+
+df = pd.DataFrame({'text': sentences})
+df['new_col'] = 0
+
+for i in range(0, 3):
+    df.loc[i, 'new_col'] = len(df.loc[i, 'text'].split())
+
+print(df)
+
+    
+Q5. How are DataFrame.size() and DataFrame.shape() different?
+
+DataFrame.size and DataFrame.shape are both attributes of a Pandas DataFrame, but they provide different information about the DataFrame.
+
+DataFrame.size returns the total number of elements in the DataFrame, which is the product of the number of rows and columns. For example, if a DataFrame has 5 rows and 3 columns, df.size would return 15.
+
+DataFrame.shape returns a tuple containing the number of rows and columns in the DataFrame. For example, if a DataFrame has 5 rows and 3 columns, df.shape would return (5, 3).
+
+Q6. Which function of pandas do we use to read an excel file?
+
+To read an Excel file in Pandas, you can use the read_excel() function. This function reads the data from an Excel file into a Pandas DataFrame.
+
+import pandas as pd
+
+# read the Excel file into a DataFrame
+df = pd.read_excel('filename.xlsx')
+
+# display the first 5 rows of the DataFrame
+print(df.head())
+
+Q7. You have a Pandas DataFrame df that contains a column named 'Email' that contains email
+addresses in the format 'username@domain.com'. Write a Python function that creates a new column
+'Username' in df that contains only the username part of each email address.
+The username is the part of the email address that appears before the '@' symbol. For example, if the
+email address is 'john.doe@example.com', the 'Username' column should contain 'john.doe'. Your
+function should extract the username from each email address and store it in the new 'Username'
+column.
+
+email={'email':['anangobi@gmail','suriyakumaresan@gmail.com','bharat@gmail.com']}
+df=pd.DataFrame(email)
+lis=[]
+for i in range(0,3):
+    lis.append((df['email'][i]).split('@')[0])
+df['name']=lis
+
+Q8. You have a Pandas DataFrame df with columns 'A', 'B', and 'C'. Write a Python function that selects
+all rows where the value in column 'A' is greater than 5 and the value in column 'B' is less than 10. The
+function should return a new DataFrame that contains only the selected rows.
+
+data1={'A':[3,8,6,2,9],'B':[5,2,9,3,1],'C':[1,7,4,5,2]}
+df=pd.DataFrame(data1)
+df2=pd.DataFrame(df[(df['A']>5) & (df['B']<10)])
+
+Q9. Given a Pandas DataFrame df with a column 'Values', write a Python function to calculate the mean,
+median, and standard deviation of the values in the 'Values' column.
+
+data = {'Values': [10, 20, 30, 40, 50]}
+df = pd.DataFrame(data)
+mean = df['Values'].mean()
+median = df['Values'].median()
+std_dev = df['Values'].std()
+
+Q10. Given a Pandas DataFrame df with a column 'Sales' and a column 'Date', write a Python function to
+create a new column 'MovingAverage' that contains the moving average of the sales for the past 7 days
+for each row in the DataFrame. The moving average should be calculated using a window of size 7 and
+should include the current day.
+
+import pandas as pd
+
+df = pd.DataFrame({'Date': pd.date_range('20220101', periods=10),
+                   'Sales': [10, 20, 15, 30, 25, 40, 35, 50, 45, 60]})
+df['MovingAverage'] = df['Sales'].rolling(window=7, min_periods=1).mean()
+
+Q11. You have a Pandas DataFrame df with a column 'Date'. Write a Python function that creates a new
+column 'Weekday' in the DataFrame. The 'Weekday' column should contain the weekday name (e.g.
+Monday, Tuesday) corresponding to each date in the 'Date' column.
+
+df = pd.DataFrame({'Date': pd.date_range('20220101', periods=10),
+                   'Sales': [10, 20, 15, 30, 25, 40, 35, 50, 45, 60]})
+df['Weekday'] = pd.to_datetime(df['Date']).dt.day_name()
+
+Q12. Given a Pandas DataFrame df with a column 'Date' that contains timestamps, write a Python
+function to select all rows where the date is between '2023-01-01' and '2023-01-31'.
+
+import pandas as pd
+start_date = '2023-01-01'
+end_date = '2023-01-31'
+
+df = pd.DataFrame({'Date': pd.date_range('20230101', periods=60)})
+mask = (df['Date'] >= start_date) & (df['Date'] <= end_date)
+df[mask]
+
+Q13. To use the basic functions of pandas, what is the first and foremost necessary library that needs to
+be imported?
+
+import pandas as pd is the first and foremost necessary library that needs to be imported.
