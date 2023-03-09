@@ -1,0 +1,153 @@
+Q1. Write a code to print the data present in the second row of the dataframe, df.
+
+import pandas as pd
+course_name = ['Data Science', 'Machine Learning', 'Big Data', 'Data Engineer']
+duration = [2,3,6,4]
+df = pd.DataFrame(data = {'course_name' : course_name, 'duration' : duration})
+df
+
+Q2. What is the difference between the functions loc and iloc in pandas.DataFrame?
+
+Both loc and iloc are methods in Pandas DataFrame that allow you to access data based on their labels (using loc) or their numerical indices (using iloc).
+
+The main difference between loc and iloc is that loc uses labels to slice data, while iloc uses integer indices.
+
+Q3. Reindex the given dataframe using a variable, reindex = [3,0,1,2] and store it in the variable, new_df
+then find the output for both new_df.loc[2] and new_df.iloc[2].
+
+import pandas as pd
+import numpy as np
+
+columns = ['column_1', 'column_2', 'column_3', 'column_4', 'column_5', 'column_6']
+indices = [1,2,3,4,5,6]
+df1 = pd.DataFrame(np.random.rand(6,6), columns = columns, index = indices)
+
+reindex = [3,0,1,2]
+new_df = df1.reindex(reindex)
+
+new_df
+
+
+Q4. Write a code to find the following statistical measurements for the above dataframe df1:
+(i) mean of each and every column present in the dataframe.
+(ii) standard deviation of column, ‘column_2’
+
+# Mean of each column
+df1.mean()
+
+# Standard deviation of column_2
+df1['column_2'].std()
+
+
+Q5. Replace the data present in the second row of column, ‘column_2’ by a string variable then find the
+mean of column, column_2.
+If you are getting errors in executing it then explain why.
+[Hint: To replace the data use df1.loc[] and equate this to string data of your choice.]
+
+This code will throw an error because we cannot calculate the mean of a column that contains both numerical and non-numerical data.
+
+
+Q6. What do you understand about the windows function in pandas and list the types of windows
+functions?
+
+Window functions in Pandas allow you to apply a function to a rolling window of data. A rolling window is a fixed-size sliding window that moves across the data, applying a function to each window.
+
+The types of window functions in Pandas include:
+
+Rolling window functions: These operate on a fixed-size window of data that moves across the data frame.
+Expanding window functions: These operate on a window of data that starts at the beginning of the data frame and expands to include more data over time.
+Exponentially-weighted window functions: These operate on a window of data that gives more weight to more recent data.
+
+
+Q7. Write a code to print only the current month and year at the time of answering this question.
+[Hint: Use pandas.datetime function]
+
+import pandas as pd
+import datetime
+
+now = datetime.datetime.now()
+print(now.strftime("%Y-%m"))
+
+
+Q8. Write a Python program that takes in two dates as input (in the format YYYY-MM-DD) and
+calculates the difference between them in days, hours, and minutes using Pandas time delta. The
+program should prompt the user to enter the dates and display the result.
+Did you observe any difference in both the outputs? If so then explain it.
+
+import pandas as pd
+date1_str = input("Enter first date (YYYY-MM-DD): ")
+date2_str = input("Enter second date (YYYY-MM-DD): ")
+date1 = pd.to_datetime(date1_str)
+date2 = pd.to_datetime(date2_str)
+diff = date2 - date1
+days = diff.days
+hours = diff.seconds // 3600
+minutes = (diff.seconds // 60) % 60
+print(f"The difference between {date1_str} and {date2_str} is {days} days, {hours} hours, and {minutes} minutes.")
+
+
+Q9. Write a Python program that reads a CSV file containing categorical data and converts a specified
+column to a categorical data type. The program should prompt the user to enter the file path, column
+name, and category order, and then display the sorted data.
+
+import pandas as pd
+file_path = input("Enter file path: ")
+column_name = input("Enter column name: ")
+category_order = input("Enter category order (comma-separated list): ").split(",")
+df = pd.read_csv(file_path)
+df[column_name] = pd.Categorical(df[column_name], categories=category_order)
+sorted_df = df.sort_values(by=column_name)
+print(sorted_df)
+
+
+Q10. Write a Python program that reads a CSV file containing sales data for different products and
+visualizes the data using a stacked bar chart to show the sales of each product category over time. The
+program should prompt the user to enter the file path and display the chart.
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Prompt user for file path
+file_path = input("Enter file path: ")
+
+# Read CSV file
+df = pd.read_csv(file_path)
+
+# Group data by year and product category
+grouped_df = df.groupby(['year', 'category']).sum()
+
+# Reshape data into a pivot table
+pivot_table = grouped_df.pivot_table(values='sales', index='year', columns='category')
+
+# Plot stacked bar chart
+pivot_table.plot(kind='bar', stacked=True)
+plt.ylabel('Sales')
+plt.title('Sales by Product Category')
+plt.show()
+
+Q11. You are given a CSV file containing student data that includes the student ID and their test score. Write
+a Python program that reads the CSV file, calculates the mean, median, and mode of the test scores, and
+displays the results in a table.
+
+
+import pandas as pd
+
+# Prompt user to enter file path of CSV file
+file_path = input("Enter the file path of the CSV file containing the student data: ")
+
+# Read CSV file into a pandas DataFrame
+df = pd.read_csv(file_path)
+
+# Calculate mean, median, and mode of test scores
+mean = df["Test Score"].mean()
+median = df["Test Score"].median()
+mode = df["Test Score"].mode().tolist()
+
+# Display results in a table
+print("+-----------+--------+")
+print("| Statistic | Value  |")
+print("+-----------+--------+")
+print(f"| Mean      | {mean:.1f} |")
+print(f"| Median    | {median}   |")
+print(f"| Mode      | {', '.join(str(x) for x in mode)}    |")
+print("+-----------+--------+")
