@@ -1,0 +1,60 @@
+Q1. Is there any difference in the data type of variables list_ and array_list? If there is then write a code
+to print the data types of both the variables.
+
+import numpy as np
+list_ = [ 1,2,3,4,5 ]
+array_list = np.array(object = list_)
+type(list_)
+type(array_list)
+
+Q2. Write a code to print the data type of each and every element of both the variables list_ and
+arra_list.
+
+import numpy as np
+
+list_ = [1, 2, 3, 4, 5]
+array_list = np.array(list_)
+
+print(type(list_))  # Output: <class 'list'>
+print(type(array_list))  # Output: <class 'numpy.ndarray'>
+
+Q3. Considering the following changes in the variable, array_list:
+array_list = np.array(object = list_, dtype = int)
+Will there be any difference in the data type of the elements present in both the variables, list_ and
+arra_list? If so then print the data types of each and every element present in both the variables, list_
+and arra_list.
+
+There will be no difference in the data type list may contain string float or int but the data type of the list will always remains as list
+import numpy as np
+list_ = [ '1','2','3','4','5' ]
+array_list = np.array(object = list_)
+type(list_)
+array_list = np.array(object = list_, dtype = int)
+
+Q4. Write a code to find the following characteristics of variable, num_array:
+(i) shape
+
+import numpy as np
+num_list = [ [ 1 , 2 , 3 ] , [ 4 , 5 , 6 ] ]
+num_array = np.array(object = num_list)
+np.size(num_array)
+
+(ii) size
+
+import numpy as np
+num_list = [ [ 1 , 2 , 3 ] , [ 4 , 5 , 6 ] ]
+num_array = np.array(object = num_list)
+np.shape(num_array)
+
+Q5. Write a code to create numpy array of 3*3 matrix containing zeros only, using a numpy array
+creation function.
+
+arr=np.zeros((3,3))
+np.size(arr)
+np.shape(arr)
+
+Q6. Create an identity matrix of shape (5,5) using numpy functions?
+
+arr1=np.eye(5)
+np.size(arr1)
+np.shape(arr1)
