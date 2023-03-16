@@ -1,0 +1,47 @@
+Que 1: Name any five plots that we can plot using the Seaborn library. Also, state the uses of each plot.
+
+Scatter Plot: A scatter plot is used to visualize the relationship between two continuous variables. It helps to identify any patterns or trends in the data.
+
+Line Plot: A line plot is used to visualize the trend in the data over time. It can be used to visualize the change in a variable over a period of time.
+
+Bar Plot: A bar plot is used to compare the values of a variable across different categories. It can be used to visualize the frequency of occurrence of a variable across categories.
+
+Heatmap: A heatmap is used to visualize the correlation between variables. It can be used to identify any patterns or trends in the data.
+
+Histogram: A histogram is used to visualize the distribution of a variable. It can be used to identify the central tendency and spread of the data.
+
+
+Que 2: Load the "fmri" dataset using the load_dataset function of seaborn. Plot a line plot using x =
+"timepoint" and y = "signal" for different events and regions.
+
+import seaborn as sns
+fmri=sns.load_dataset('fmri')
+sns.scatterplot(x="timepoint", y="signal", hue="event", style="region", data=fmri)
+
+Que 3: Load the "titanic" dataset using the load_dataset function of seaborn. Plot two box plots using x =
+'pclass', y = 'age' and y = 'fare'.
+
+
+titanic=sns.load_dataset('titanic')
+sns.boxplot(x='pclass', y='age', data=titanic)
+sns.boxplot(x='pclass', y='fare', data=titanic)
+
+Que 4: Use the "diamonds" dataset from seaborn to plot a histogram for the 'price' column. Use the hue
+parameter for the 'cut' column of the diamonds dataset.
+
+dia=sns.load_dataset('diamonds')
+sns.histplot(y='price',x='cut', multiple= 'stack',data=dia)
+
+Que 5: Use the "iris" dataset from seaborn to plot a pair plot. Use the hue parameter for the "species" column
+of the iris dataset.
+
+iris=sns.load_dataset('iris')
+sns.pairplot(data=iris, hue="species")
+
+
+Que 6: Use the "flights" dataset from seaborn to plot a heatmap.
+
+import seaborn as sns
+flights_data = sns.load_dataset("flights")
+flights_pivot = flights_data.pivot("month", "year", "passengers")
+sns.heatmap(data=flights_pivot, annot=True, cmap="YlGnBu")
