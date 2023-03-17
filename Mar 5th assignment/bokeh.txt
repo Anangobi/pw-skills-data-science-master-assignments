@@ -1,0 +1,59 @@
+Q1. How can you create a Bokeh plot using Python code?
+
+Import the necessary modules: First, you need to import the necessary modules, including bokeh.plotting and any other dependencies you may need for your plot.
+
+Create the plot: Next, you need to create a figure object using the figure() function. This function takes several parameters, such as the plot width and height, x and y axis labels, and the title of the plot.
+
+Add data to the plot: After creating the figure object, you can add data to the plot using various glyph functions such as circle, line, and rect. These functions take the data points, the size, color, and other parameters as inputs.
+
+Output the plot: Finally, you can output the plot using the output_file() function to save it to an HTML file, and then the show() function to display it in a web browser.
+
+
+Q2. What are glyphs in Bokeh, and how can you add them to a Bokeh plot? Explain with an example.
+
+In Bokeh, glyphs are visual shapes that represent data points on a plot. Glyphs can be added to a plot using glyph functions such as circle, line, rect, text, and many others. Each glyph function takes data as input and maps it to visual attributes such as color, size, and shape. You can also customize these attributes using various parameters.
+
+from bokeh.plotting import figure, output_file, show
+
+# create a figure object
+p = figure(title="My Glyph Plot", x_axis_label='x', y_axis_label='y', width=800, height=400)
+
+# add a circle glyph to the plot
+p.circle(x=[1, 2, 3, 4], y=[5, 6, 7, 8], size=10, color='blue')
+
+# add a line glyph to the plot
+p.line(x=[1, 2, 3, 4], y=[5, 6, 7, 8], line_width=2, color='red')
+
+# add a rectangle glyph to the plot
+p.rect(x=[1, 2, 3, 4], y=[5, 6, 7, 8], width=0.2, height=0.2, color='green')
+
+# add text glyphs to the plot
+p.text(x=[1, 2, 3, 4], y=[5, 6, 7, 8], text=['A', 'B', 'C', 'D'], text_font_size='20pt', text_color='black')
+
+# output the plot to an HTML file
+output_file('my_glyph_plot.html')
+
+# show the plot in a web browser
+show(p)
+
+
+
+Q3. How can you customize the appearance of a Bokeh plot, including the axes, title, and legend?
+
+
+You can customize the appearance of a Bokeh plot by using various properties of the figure object, such as title, x_axis_label, y_axis_label, x_range, y_range, x_axis_type, y_axis_type, x_minor_ticks, y_minor_ticks, xgrid, ygrid, and many others. Additionally, you can customize the appearance of glyphs and other plot elements using various properties and parameters of the corresponding glyph functions.
+
+
+Q4. What is a Bokeh server, and how can you use it to create interactive plots that can be updated in
+real time?
+
+A Bokeh server is a Python process that runs a Bokeh application and serves interactive plots and widgets to web browsers. The Bokeh server enables real-time updating of plots and widgets based on user interactions or data changes. The Bokeh server can also support multiple users simultaneously and can store and retrieve data from various sources.
+
+
+Q5. How can you embed a Bokeh plot into a web page or dashboard using Flask or Django?
+
+To embed a Bokeh plot into a web page or dashboard using Flask or Django, you can follow these general steps:
+
+Generate a Bokeh plot using the Bokeh library.
+Create a Flask or Django web application that serves the web page or dashboard.
+Embed the Bokeh plot into the web page or dashboard using the bokeh.embed module.
