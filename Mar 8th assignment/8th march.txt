@@ -1,0 +1,123 @@
+Q1. What is the Probability density function?
+
+In probability theory, the probability density function (PDF) is a function that describes the relative likelihood for a random variable to take on a given value. The PDF represents the probability of the random variable being near a particular value.
+
+
+Q2. What are the types of Probability distribution?
+
+
+There are many types of probability distributions, including:
+
+Binomial distribution
+Poisson distribution
+Normal distribution
+Exponential distribution
+Gamma distribution
+Beta distribution
+Chi-squared distribution
+Student's t-distribution
+F-distribution
+Log-normal distribution
+
+
+Q3. Write a Python function to calculate the probability density function of a normal distribution with
+
+
+import math
+
+def normal_pdf(x, mean, std_dev):
+    """Calculates the probability density function of a normal distribution at a given point."""
+    exponent = -((x - mean)**2) / (2 * std_dev**2)
+    coefficient = 1 / (std_dev * math.sqrt(2 * math.pi))
+    return coefficient * math.exp(exponent)
+
+
+
+Q4. What are the properties of Binomial distribution? Give two examples of events where binomial
+distribution can be applied.
+
+
+The binomial distribution has the following properties:
+
+The experiment consists of a fixed number of trials.
+Each trial is independent and identical.
+There are only two possible outcomes for each trial: success or failure.
+The probability of success is constant for each trial.
+Two examples of events where the binomial distribution can be applied are:
+
+Flipping a coin: the outcome is either heads or tails, and the probability of getting heads is the same for each flip.
+Conducting a survey: each person surveyed either meets the criteria or does not, and the probability of meeting the criteria is the same for each person surveyed.
+
+
+Q5. Generate a random sample of size 1000 from a binomial distribution with probability of success 0.4
+and plot a histogram of the results using matplotlib.
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate the random sample
+sample = np.random.binomial(n=1, p=0.4, size=1000)
+
+# Plot the histogram
+plt.hist(sample, bins=2)
+plt.show()
+
+
+
+Q6. Write a Python function to calculate the cumulative distribution function of a Poisson distribution
+with given mean at a given point.
+
+
+import math
+
+def poisson_cdf(x, mean):
+    """Calculates the cumulative distribution function of a Poisson distribution at a given point."""
+    cdf = 0
+    for i in range(x+1):
+        cdf += (math.exp(-mean) * mean**i) / math.factorial(i)
+    return cdf
+
+
+
+Q7. How Binomial distribution different from Poisson distribution?
+
+
+The binomial and Poisson distributions are different in the following ways:
+
+The binomial distribution is used for discrete events with a fixed number of trials, while the Poisson distribution is used for continuous events with an infinite number of trials.
+The binomial distribution has two possible outcomes (success or failure), while the Poisson distribution has an infinite number of possible outcomes.
+The binomial distribution has a fixed probability of success for each trial, while the Poisson distribution has a fixed mean.
+
+
+Q8. Generate a random sample of size 1000 from a Poisson distribution with mean 5 and calculate the
+sample mean and variance.
+
+
+import numpy as np
+
+# Generate the random sample
+sample = np.random.poisson(lam=5, size=1000)
+
+# Calculate the sample mean and variance
+sample_mean = np.mean(sample)
+sample_var = np.var(sample)
+
+print("Sample mean:", sample_mean)
+print("Sample variance:", sample_var)
+
+
+
+Q9. How mean and variance are related in Binomial distribution and Poisson distribution?
+
+
+ In both the binomial and Poisson distributions, the mean and variance are related by the following equations:
+
+Binomial distribution: mean = n * p, variance = n * p * (1 - p), where n is the number of trials and p is the probability of success.
+Poisson distribution: mean = lambda, variance = lambda, where lambda is the mean of the distribution.
+
+
+Q10. In normal distribution with respect to mean position, where does the least frequent data appear?
+
+
+ In a normal distribution, the least frequent data appears at the tails of the distribution, which are the furthest away from the mean position. The normal distribution is symmetric around the mean, so the same amount of data appears to the left and right of the mean. As the distance from the mean increases, the probability density decreases, so the data at the tails of the distribution is less frequent than the data near the mean.
