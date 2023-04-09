@@ -1,0 +1,185 @@
+Q1: The main difference between a t-test and a z-test is that a t-test is used when the sample size is small or when the population standard deviation is unknown, while a z-test is used when the sample size is large and the population standard deviation is known. For example, if we want to determine if the mean weight of a sample of 20 people is significantly different from the population mean weight of 150 pounds, we would use a t-test. On the other hand, if we have a sample of 100 people and know the population standard deviation of weight, we would use a z-test.
+
+Q2: In hypothesis testing, a one-tailed test is a test where the alternative hypothesis is either greater than or less than the null hypothesis, while a two-tailed test is a test where the alternative hypothesis is not equal to the null hypothesis. For example, if we want to determine if a new drug improves test scores, a one-tailed test would be if the alternative hypothesis is that the drug improves test scores, while a two-tailed test would be if the alternative hypothesis is that the drug either improves or worsens test scores.
+
+Q3: Type 1 error occurs when we reject the null hypothesis when it is actually true, while Type 2 error occurs when we fail to reject the null hypothesis when it is actually false. An example of a Type 1 error is when a person is wrongly convicted of a crime they didn't commit, while an example of a Type 2 error is when a person is not convicted of a crime they actually committed.
+
+Q4: Bayes's theorem is a mathematical formula that calculates the probability of an event occurring based on prior knowledge of the event's probability and new evidence. It is expressed as P(A|B) = P(B|A)P(A) / P(B), where P(A|B) is the posterior probability of A given B, P(B|A) is the likelihood of B given A, P(A) is the prior probability of A, and P(B) is the prior probability of B. For example, if we know that the probability of a person having a certain disease is 0.05, and a new test has a sensitivity of 0.90 and a specificity of 0.95, we can use Bayes's theorem to calculate the probability of a person having the disease given a positive test result.
+
+Q5: A confidence interval is a range of values that is likely to contain the true population parameter with a certain level of confidence. It is calculated using the sample mean, sample size, standard deviation, and the desired level of confidence. For example, if we want to calculate a 95% confidence interval for the population mean weight of a sample of 50 people with a mean weight of 150 pounds and a standard deviation of 5 pounds, we would use the formula (150 ± 1.96 x 5 / sqrt(50)), which gives us a confidence interval of 146.14 to 153.86 pounds.
+
+Q6. Bayes' Theorem is used to update the probability of an event occurring based on new evidence or information. It is defined as:
+
+P(A|B) = P(B|A) * P(A) / P(B)
+
+where P(A|B) is the conditional probability of A given B, P(B|A) is the conditional probability of B given A, P(A) is the prior probability of A, and P(B) is the prior probability of B.
+
+For example, suppose a medical test is known to be 95% accurate in identifying a certain disease, and the prevalence of the disease in the population is 1%. If a person tests positive for the disease, what is the probability that they actually have the disease?
+
+Let A be the event of having the disease, and B be the event of testing positive for the disease. Then, we have:
+
+P(A) = 0.01 (prior probability of having the disease)
+P(B|A) = 0.95 (probability of testing positive given that the person has the disease)
+P(B|not A) = 0.05 (probability of testing positive given that the person does not have the disease)
+
+Using Bayes' Theorem, we can calculate:
+
+P(A|B) = P(B|A) * P(A) / P(B|A) * P(A) + P(B|not A) * P(not A)
+
+P(A|B) = 0.95 * 0.01 / (0.95 * 0.01 + 0.05 * 0.99)
+
+P(A|B) ≈ 0.161 or 16.1%
+
+So, the probability that a person who tests positive for the disease actually has the disease is only about 16.1%, even though the test is 95% accurate.
+
+Q7. The 95% confidence interval for a sample of data with a mean of 50 and a standard deviation of 5 can be calculated using the formula:
+
+CI = x̄ ± z*(σ/√n)
+
+where CI is the confidence interval, x̄ is the sample mean, σ is the population standard deviation (or sample standard deviation if the population standard deviation is unknown), n is the sample size, and z is the critical value from the standard normal distribution corresponding to the desired confidence level (in this case, 95%).
+
+Using a standard normal distribution table or calculator, we can find that the critical value z for a 95% confidence level is approximately 1.96. Plugging in the values, we get:
+
+CI = 50 ± 1.96*(5/√50)
+
+CI ≈ (47.06, 52.94)
+
+Interpreting the results, we can say that we are 95% confident that the true population mean falls within the interval (47.06, 52.94).
+
+
+Q8. The margin of error in a confidence interval is the amount of uncertainty or error associated with the estimate of the true population parameter. It represents the range of values within which the true population parameter is likely to lie with a certain level of confidence. The margin of error is affected by several factors, including the sample size, the level of confidence, and the variability in the data. As the sample size increases, the margin of error decreases because the larger sample size leads to a more precise estimate of the population parameter.
+
+For example, suppose a researcher wants to estimate the proportion of people in a city who support a particular political candidate. If the researcher surveys 100 people and finds that 60% of them support the candidate, the margin of error at a 95% confidence level might be +/- 10%. This means that the true proportion of people who support the candidate is likely to be between 50% and 70% with a 95% level of confidence. If the researcher increases the sample size to 1000 people, the margin of error might decrease to +/- 3%, providing a more precise estimate of the population parameter.
+
+Q9. The z-score for a data point with a value of 75, a population mean of 70, and a population standard deviation of 5 can be calculated as follows:
+
+z = (x - μ) / σ
+z = (75 - 70) / 5
+z = 1
+
+The z-score of 1 indicates that the data point is 1 standard deviation above the population mean. In other words, the value of 75 is higher than the average value by one standard deviation.
+
+Q10. To conduct a hypothesis test to determine if the new weight loss drug is significantly effective at a 95% confidence level using a t-test, we can follow these steps:
+
+Step 1: State the null and alternative hypotheses:
+
+Null hypothesis (H0): The new weight loss drug is not significantly effective, and the average weight loss in the population is equal to or less than 0 pounds (μ ≤ 0).
+
+Alternative hypothesis (Ha): The new weight loss drug is significantly effective, and the average weight loss in the population is greater than 0 pounds (μ > 0).
+
+Step 2: Set the significance level and determine the critical value:
+
+Since the sample size is less than 30, we use a t-distribution with n-1 degrees of freedom. At a 95% confidence level and 49 degrees of freedom, the critical value is 1.677.
+
+Step 3: Calculate the test statistic:
+
+t = (x̄ - μ) / (s / √n)
+t = (6 - 0) / (2.5 / √50)
+t = 12
+
+Step 4: Compare the test statistic with the critical value:
+
+Since the calculated t-value of 12 is greater than the critical value of 1.677, we reject the null hypothesis and conclude that the new weight loss drug is significantly effective at a 95% confidence level.
+
+Therefore, we can infer that there is sufficient evidence to support the claim that the new weight loss drug is significantly effective in helping participants lose weight.
+
+
+Q11. To calculate the 95% confidence interval for the true proportion of people who are satisfied with their job, we can use the formula:
+
+CI = p ± z*(sqrt((p*(1-p))/n))
+
+where:
+p = sample proportion = 0.65
+n = sample size = 500
+z = z-score corresponding to 95% confidence level = 1.96 (from standard normal distribution table)
+
+CI = 0.65 ± 1.96*(sqrt((0.65*(1-0.65))/500))
+= 0.65 ± 0.041
+= (0.609, 0.691)
+
+Therefore, we can say with 95% confidence that the true proportion of people who are satisfied with their job lies between 60.9% and 69.1%.
+
+Q12. To conduct a hypothesis test to determine if the two teaching methods have a significant difference in student performance, we can use a two-sample t-test with the following null and alternative hypotheses:
+
+H0: μA = μB (the two teaching methods have no significant difference in student performance)
+Ha: μA ≠ μB (the two teaching methods have a significant difference in student performance)
+
+where:
+μA = population mean of sample A
+μB = population mean of sample B
+
+The test statistic is calculated as:
+
+t = (x̄A - x̄B) / sqrt((sA^2/nA) + (sB^2/nB))
+
+where:
+x̄A = sample mean of sample A = 85
+x̄B = sample mean of sample B = 82
+sA = standard deviation of sample A = 6
+sB = standard deviation of sample B = 5
+nA = sample size of sample A
+nB = sample size of sample B
+
+Assuming equal variances, we can calculate the pooled standard deviation as:
+
+sp = sqrt(((nA-1)sA^2 + (nB-1)sB^2) / (nA+nB-2))
+
+sp = sqrt(((29)(6^2) + (29)(5^2)) / (58))
+= 5.5
+
+Substituting the values, we get:
+
+t = (85-82) / sqrt((6^2/30) + (5^2/30))
+= 1.69
+
+Degrees of freedom (df) = nA + nB - 2 = 30 + 30 - 2 = 58
+
+At a significance level of 0.01 and 58 degrees of freedom, the critical t-value is ±2.660. Since our calculated t-value (1.69) is less than the critical t-value, we fail to reject the null hypothesis.
+
+Therefore, we can conclude that there is insufficient evidence to suggest that the two teaching methods have a significant difference in student performance at a significance level of 0.01.
+
+Q13. To calculate the 90% confidence interval for the true population mean, we can use the formula:
+
+CI = x̄ ± z*(σ/sqrt(n))
+
+where:
+x̄ = sample mean = 65
+σ = population standard deviation = 8
+n = sample size = 50
+z = z-score corresponding to 90% confidence level = 1.645 (from standard normal distribution table)
+
+CI = 65 ± 1.645*(8/sqrt(50))
+= 65 ± 1.83
+= (63.17, 66.83)
+
+Therefore, we can say with 90% confidence that the true population mean lies between 63.17 and 66.
+
+Q14. To conduct a hypothesis test to determine if caffeine has a significant effect on reaction time, we can use a t-test.
+
+Let's first set up our null and alternative hypotheses:
+
+Null hypothesis (H0): Caffeine has no significant effect on reaction time. μ = 0.25
+Alternative hypothesis (H1): Caffeine has a significant effect on reaction time. μ ≠ 0.25
+We will use a significance level of α = 0.1, corresponding to a 90% confidence level.
+
+Next, we need to calculate the t-statistic. The formula for the t-statistic is:
+
+t = (x̄ - μ) / (s / √n)
+
+where:
+x̄ = sample mean = 0.25
+μ = hypothesized population mean = 0.25
+s = sample standard deviation = 0.05
+n = sample size = 30
+
+Plugging in the numbers, we get:
+
+t = (0.25 - 0.25) / (0.05 / √30) = 0 / 0.009144 = 0
+
+The calculated t-value is 0.
+
+To determine the critical t-value, we need to look it up in a t-table with 29 degrees of freedom (df = n - 1). For a two-tailed test with a significance level of α = 0.1, the critical t-values are ±1.699.
+
+Since our calculated t-value of 0 is within the range of the critical t-values, we fail to reject the null hypothesis. This means that we do not have enough evidence to conclude that caffeine has a significant effect on reaction time at a 90% confidence level.
+
+Therefore, we can conclude that there is not sufficient evidence to support the claim that caffeine has a significant effect on reaction time based on the given sample data.
