@@ -1,0 +1,275 @@
+Q1. Calculate the 95% confidence interval for a sample of data with a mean of 50 and a standard deviation
+of 5 using Python. Interpret the results.
+
+import scipy.stats as stats
+
+n = 100  # sample size
+mean = 50  # sample mean
+std_dev = 5  # sample standard deviation
+alpha = 0.05  # significance level
+dof = n - 1  # degrees of freedom
+
+ci = stats.t.interval(1-alpha, dof, loc=mean, scale=std_dev/np.sqrt(n))
+
+print(ci)
+
+
+Q2. Conduct a chi-square goodness of fit test to determine if the distribution of colors of M&Ms in a bag
+matches the expected distribution of 20% blue, 20% orange, 20% green, 10% yellow, 10% red, and 20%
+brown. Use Python to perform the test with a significance level of 0.05.
+
+import numpy as np
+from scipy.stats import chisquare
+
+# observed frequencies of colors in the sample
+observed_freq = [10, 12, 18, 7, 9, 14]
+
+# expected frequencies of colors according to the hypothesized distribution
+expected_freq = [0.2*len(observed_freq)]*5
+
+# add the expected frequency for brown
+expected_freq.append(0.2*len(observed_freq))
+
+# conduct the chi-square test
+chi2_stat, p_value = chisquare(observed_freq, expected_freq)
+
+# print the results
+print("Chi-square statistic:", chi2_stat)
+print("p-value:", p_value)
+
+
+Q3. Use Python to calculate the chi-square statistic and p-value for a contingency table with the following
+data:
+                group            a            b
+              outcome1       20         15
+              outcome2       10          25
+              outcome3       15          20
+Interpret the results of the test.
+
+
+import numpy as np
+from scipy.stats import chi2_contingency
+
+# create the contingency table
+table = np.array([[20, 15], [10, 25], [15, 20]])
+
+# conduct the chi-square test
+chi2_stat, p_value, dof, expected_freq = chi2_contingency(table)
+
+# print the results
+print("Chi-square statistic:", chi2_stat)
+print("p-value:", p_value)
+
+
+Q4. A study of the prevalence of smoking in a population of 500 individuals found that 60 individuals
+smoked. Use Python to calculate the 95% confidence interval for the true proportion of individuals in the
+population who smoke.
+
+
+import statsmodels.api as sm
+
+n = 500  # sample size
+x = 60  # number of smokers
+
+# calculate the proportion of smokers
+p = x/n
+
+# calculate the 95% confidence interval
+ci = sm.stats.proportion_confint(x, n, alpha=0.05, method='normal')
+
+# print the results
+print("95% Confidence interval:", ci)
+
+
+Q5. Calculate the 90% confidence interval for a sample of data with a mean of 75 and a standard deviation
+of 12 using Python. Interpret the results.
+
+
+import scipy.stats as stats
+
+n = 1  # sample size
+xbar = 75  # sample mean
+s = 12  # sample standard deviation
+alpha = 0.1  # significance level
+
+# calculate the standard error of the mean
+sem = s / (n ** 0.5)
+
+# calculate the confidence interval
+ci = stats.t.interval(alpha=1-alpha, df=n-1, loc=xbar, scale=sem)
+
+# print the results
+print("90% Confidence interval:", ci)
+
+
+Q6. Use Python to plot the chi-square distribution with 10 degrees of freedom. Label the axes and shade the
+area corresponding to a chi-square statistic of 15.
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+
+df = 10  # degrees of freedom
+x = np.linspace(0, 25, 1000)  # range of x values
+
+# create the chi-square distribution with df degrees of freedom
+chi2_dist = stats.chi2(df)
+
+# plot the chi-square distribution
+plt.plot(x, chi2_dist.pdf(x), label='Chi-square distribution with df=10')
+
+# shade the area corresponding to a chi-square statistic of 15
+x_shade = np.linspace(15, 25, 1000)
+plt.fill_between(x_shade, chi2_dist.pdf(x_shade), color='blue', alpha=0.3)
+
+# add labels and title to the plot
+plt.xlabel('Chi-square statistic')
+plt.ylabel('Probability density')
+plt.title('Chi-square distribution')
+
+# add a legend to the plot
+plt.legend()
+
+# show the plot
+plt.show()
+
+
+Q7. A random sample of 1000 people was asked if they preferred Coke or Pepsi. Of the sample, 520
+preferred Coke. Calculate a 99% confidence interval for the true proportion of people in the population who
+prefer Coke.
+
+
+CI = (p_hat - z*(sqrt(p_hat*(1-p_hat)/n)), p_hat + z*(sqrt(p_hat*(1-p_hat)/n)))
+p_hat = 520/1000
+n = 1000
+CI = (p_hat - 2.576*(sqrt(p_hat*(1-p_hat)/n)), p_hat + 2.576*(sqrt(p_hat*(1-p_hat)/n)))
+import math
+
+p_hat = 520/1000
+n = 1000
+z = 2.576
+
+lower = p_hat - z*(math.sqrt(p_hat*(1-p_hat)/n))
+upper = p_hat + z*(math.sqrt(p_hat*(1-p_hat)/n))
+
+print("The 99% confidence interval for the true proportion of people who prefer Coke is ({:.4f}, {:.4f})".format(lower, upper))
+The 99% confidence interval for the true proportion of people who prefer Coke is (0.4854, 0.5546)
+
+
+Q8. A researcher hypothesizes that a coin is biased towards tails. They flip the coin 100 times and observe
+45 tails. Conduct a chi-square goodness of fit test to determine if the observed frequencies match the
+expected frequencies of a fair coin. Use a significance level of 0.05.
+
+
+To conduct a chi-square goodness of fit test, we need to calculate the expected frequencies under the assumption of a fair coin, and then compare them to the observed frequencies using the chi-square statistic.
+
+In this case, the expected frequencies for a fair coin would be 50 tails and 50 heads out of 100 flips. We can calculate the expected frequency for tails as:
+expected_tails = 0.5 * 100 = 50
+The expected frequency for heads is also 50.
+
+Now, we can set up the null and alternative hypotheses for the chi-square test:
+
+Null hypothesis (H0): The observed frequencies do not differ significantly from the expected frequencies.
+Alternative hypothesis (Ha): The observed frequencies differ significantly from the expected frequencies.
+We can use a significance level of 0.05, which means that we will reject the null hypothesis if the p-value is less than 0.05.
+
+Next, we need to calculate the chi-square statistic and the corresponding p-value. The chi-square statistic is calculated as:
+chi2 = sum((observed - expected)**2 / expected)
+observed = [45, 55]
+expected = [50, 50]
+chi2 = sum((observed - expected)**2 / expected) = (5**2/50) + (5**2/50) = 1
+from scipy.stats import chi2
+
+p_value = 1 - chi2.cdf(1, 1)
+
+print("The p-value is {:.4f}".format(p_value))
+
+
+Q9.A study was conducted to determine if there is an association between smoking status (smoker or
+non-smoker) and lung cancer diagnosis (yes or no). The results are shown in the contingency table below.
+Conduct a chi-square test for independence to determine if there is a significant association between
+smoking status and lung cancer diagnosis.
+Lung Cancer:            Yes        No
+
+Smoker                      60       140
+Non-smoker              30       170
+Use a significance level of 0.05.
+
+To conduct a chi-square test for independence, we first need to set up the null and alternative hypotheses:
+
+Null hypothesis (H0): There is no association between smoking status and lung cancer diagnosis.
+Alternative hypothesis (Ha): There is a significant association between smoking status and lung cancer diagnosis.
+We can use a significance level of 0.05, which means that we will reject the null hypothesis if the p-value is less than 0.05.
+
+Next, we need to calculate the chi-square statistic and the corresponding p-value. We can do this using the chi2_contingency function from the scipy.stats module in Python:
+
+from scipy.stats import chi2_contingency
+
+observed = [[60, 140], [30, 170]]
+chi2, p, dof, expected = chi2_contingency(observed)
+
+print("The chi-square statistic is {:.2f}.".format(chi2))
+print("The p-value is {:.4f}.".format(p))
+
+
+Q10. A study was conducted to determine if the proportion of people who prefer milk chocolate, dark
+chocolate, or white chocolate is different in the U.S. versus the U.K. A random sample of 500 people from
+the U.S. and a random sample of 500 people from the U.K. were surveyed. The results are shown in the
+contingency table below. Conduct a chi-square test for independence to determine if there is a significant
+association between chocolate preference and country of origin.
+                     Milk Chocolate       Dark chocolate     white chocolate
+
+U.S. (n=500)            200                        150                          150
+U.K. (n=500)            225                        175                          100
+
+To conduct a chi-square test for independence, we first need to set up the null and alternative hypotheses:
+
+Null hypothesis (H0): There is no association between chocolate preference and country of origin.
+Alternative hypothesis (Ha): There is a significant association between chocolate preference and country of origin.
+We can use a significance level of 0.05, which means that we will reject the null hypothesis if the p-value is less than 0.05.
+
+Next, we need to calculate the chi-square statistic and the corresponding p-value. We can do this using the chi2_contingency function from the scipy.stats module in Python:
+
+from scipy.stats import chi2_contingency
+
+observed = [[200, 150, 150], [225, 175, 100]]
+chi2, p, dof, expected = chi2_contingency(observed)
+
+print("The chi-square statistic is {:.2f}.".format(chi2))
+print("The p-value is {:.4f}.".format(p))
+
+
+
+Q11. A random sample of 30 people was selected from a population with an unknown mean and standard
+deviation. The sample mean was found to be 72 and the sample standard deviation was found to be 10.
+Conduct a hypothesis test to determine if the population mean is significantly different from 70. Use a
+significance level of 0.05.
+
+We are given:
+
+Sample size (n) = 30
+Sample mean (x̄) = 72
+Sample standard deviation (s) = 10
+Null hypothesis (H0): population mean (μ) = 70
+Alternative hypothesis (Ha): population mean (μ) ≠ 70
+Significance level (α) = 0.05
+Since the sample size is less than 30, we can use the t-test instead of the z-test.
+
+We need to calculate the t-statistic and the corresponding p-value to determine if we reject or fail to reject the null hypothesis.
+
+The t-statistic can be calculated as follows:
+
+t = (x̄ - μ) / (s / sqrt(n))
+t = (72 - 70) / (10 / sqrt(30))
+t = 1.095
+
+Using a t-distribution table with degrees of freedom (df) = n - 1 = 29 and a two-tailed test with a significance level of 0.05, we find that the critical t-value is ±2.045.
+
+The p-value is the probability of observing a sample mean as extreme or more extreme than the one observed, assuming the null hypothesis is true. We can calculate it using a t-distribution table or a t-distribution calculator.
+
+Using a t-distribution calculator with 29 degrees of freedom and a two-tailed test, we find that the p-value is 0.284.
+
+Since the p-value (0.284) is greater than the significance level (0.05), we fail to reject the null hypothesis. We do not have sufficient evidence to conclude that the population mean is significantly different from 70 at a 5% level of significance.
+
+Therefore, we can conclude that there is not enough evidence to suggest that the population mean is different from 70.
