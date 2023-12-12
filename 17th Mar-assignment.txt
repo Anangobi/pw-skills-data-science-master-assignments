@@ -1,0 +1,65 @@
+Q1: Missing Values
+Definition: Missing values refer to the absence of data in specific fields within a dataset.
+Importance of Handling: They can adversely affect model performance by introducing bias or reducing the effectiveness of algorithms.
+Algorithms Not Affected: Tree-based algorithms like Random Forests or Decision Trees are less affected by missing values.
+
+Q2: Techniques for Handling Missing Data
+
+Imputation: Filling missing values with statistical measures.
+
+# Example: Imputation with mean
+df['column'].fillna(df['column'].mean(), inplace=True)
+
+Deletion: Removing rows or columns with missing values.
+
+# Example: Dropping rows with missing values
+df.dropna(axis=0, inplace=True)
+
+
+Q3: Imbalanced Data
+Imbalanced Data: It refers to datasets where one class dominates the other(s) in terms of occurrences.
+Consequences: Models might have bias toward the majority class, affecting their ability to predict the minority class.
+
+Q4: Up-sampling and Down-sampling
+Up-sampling: Increasing the number of instances in the minority class.
+Down-sampling: Decreasing the number of instances in the majority class.
+Requirement Example: Up-sampling for rare event prediction; Down-sampling to balance classes.
+
+
+Q5: Data Augmentation and SMOTE
+Data Augmentation: Technique to artificially increase the size of a dataset by creating modified versions of existing data points.
+SMOTE (Synthetic Minority Over-sampling Technique): It generates synthetic samples for the minority class to balance the dataset.
+
+
+Q6: Outliers
+Outliers: Data points significantly different from other observations in a dataset.
+Importance: Outliers can skew statistical analyses and affect model accuracy, hence essential to handle.
+
+Q7: Techniques to Handle Missing Data in Analysis
+Imputation: Fill missing values with mean, median, mode, or use advanced imputation techniques.
+Deletion: Remove rows/columns with missing data if they don't significantly impact the analysis.
+Predictive Techniques: Use models to predict missing values based on available data.
+
+
+Q8: Strategies to Determine Pattern in Missing Data
+Visualization: Plot missing values to identify patterns.
+Statistical Tests: Check correlations between missing values in different columns.
+Machine Learning Models: Use models to predict missing values based on other features.
+
+
+Q9: Evaluating Performance on Imbalanced Dataset
+Use Evaluation Metrics: Employ metrics like precision, recall, F1-score instead of accuracy.
+Sampling Techniques: Implement up-sampling, down-sampling, or use techniques like SMOTE.
+
+Q10: Balancing an Unbalanced Dataset with Majority Class
+Down-sampling: Reduce the number of instances in the majority class.
+Synthetic Data Generation: Use techniques like SMOTE to balance the dataset.
+
+
+Q11: Balancing an Unbalanced Dataset with Minority Class
+Up-sampling: Increase the number of instances in the minority class using duplication or synthetic data generation.
+
+
+
+
+
