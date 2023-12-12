@@ -1,0 +1,56 @@
+Q1: Min-Max Scaling
+Definition: It scales features to a specified range, typically between 0 and 1.
+Formula: \text{X_scaled} = \frac{\text{X} - \text{X_min}}{\text{X_max} - \text{X_min}}
+Example:
+ 
+from sklearn.preprocessing import MinMaxScaler
+data = [[1], [5], [10], [15], [20]]
+scaler = MinMaxScaler(feature_range=(-1, 1))
+scaled_data = scaler.fit_transform(data)
+print(scaled_data)
+
+Q2: Unit Vector Technique vs. Min-Max Scaling
+Unit Vector: Scales each feature to a unit norm (vector length) in a feature-wise manner.
+Difference: Min-Max scales features within a range, while unit vector scales features to a unit norm.
+Example:
+ 
+from sklearn.preprocessing import Normalizer
+data = [[1, 2], [3, 4], [5, 6]]
+scaler = Normalizer(norm='l2')
+scaled_data = scaler.fit_transform(data)
+print(scaled_data)
+
+Q3: PCA for Dimensionality Reduction
+PCA: Technique to reduce the dimensionality of data by finding new orthogonal dimensions (principal components) that capture the most variance.
+Example:
+ 
+from sklearn.decomposition import PCA
+pca = PCA(n_components=2)
+reduced_data = pca.fit_transform(data)
+print(reduced_data)
+
+Q4: PCA and Feature Extraction
+Relationship: PCA can be used for feature extraction by transforming original features into a lower-dimensional space represented by principal components.
+Example:
+ 
+# Assuming 'data' is your dataset
+pca = PCA(n_components=3)
+extracted_features = pca.fit_transform(data)
+
+Q5: Min-Max Scaling for Food Delivery Dataset
+Application: Apply Min-Max scaling to features like price, rating, and delivery time to bring them within a common range, ensuring similar influence on the recommendation system.
+
+Q6: PCA for Stock Price Prediction
+Application: Use PCA to reduce the dimensions of financial and market trend features, capturing the most significant variations and improving computational efficiency in modeling.
+
+Q7: Min-Max Scaling for Specified Range
+Python Example:
+ 
+from sklearn.preprocessing import MinMaxScaler
+data = [[1], [5], [10], [15], [20]]
+scaler = MinMaxScaler(feature_range=(-1, 1))
+scaled_data = scaler.fit_transform(data)
+print(scaled_data)
+
+Q8: Feature Extraction Using PCA
+Choosing Principal Components: Based on the explained variance ratio, select components that retain significant variance while reducing dimensions. The choice depends on the desired explained variance and trade-off with reduced dimensions. Use tools like scree plots or cumulative explained variance to decide.
