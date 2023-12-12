@@ -1,0 +1,33 @@
+### Q1: Ridge Regression vs. Ordinary Least Squares (OLS) Regression
+- **Ridge Regression**: A regularization technique that adds a penalty term (L2 norm) to the OLS cost function, aiming to shrink coefficients and prevent overfitting.
+- **Difference**: OLS minimizes the sum of squared residuals, while Ridge adds a penalty term to control the magnitude of coefficients.
+
+### Q2: Assumptions of Ridge Regression
+- Similar to OLS assumptions: linearity, independence, homoscedasticity. 
+- However, Ridge Regression is less sensitive to multicollinearity, relaxing the multicollinearity assumption to some extent.
+
+### Q3: Selecting Tuning Parameter (Lambda) in Ridge Regression
+- Cross-validation or grid search techniques are commonly used to find the optimal lambda value.
+- Choose lambda that minimizes the prediction error on a validation dataset.
+
+### Q4: Ridge Regression for Feature Selection
+- Ridge Regression does not perform explicit feature selection by reducing coefficients to zero, unlike Lasso.
+- It shrinks coefficients towards zero but retains all features, which may help mitigate the impact of multicollinearity rather than select features.
+
+### Q5: Ridge Regression and Multicollinearity
+- Ridge Regression is effective in handling multicollinearity by reducing the impact of highly correlated predictors.
+- It stabilizes the coefficients by shrinking them towards zero, making them less sensitive to changes caused by multicollinearity.
+
+### Q6: Handling Categorical and Continuous Variables in Ridge Regression
+- Ridge Regression can handle both categorical and continuous variables without any special preprocessing.
+- However, categorical variables might need encoding (e.g., one-hot encoding) to represent them numerically.
+
+### Q7: Interpretation of Coefficients in Ridge Regression
+- Similar to OLS, coefficients represent the change in the dependent variable for a unit change in the respective predictor, considering other predictors constant.
+- But in Ridge, coefficients are penalized and tend to be smaller compared to OLS.
+
+### Q8: Use of Ridge Regression in Time Series Data
+- Ridge Regression can be adapted for time-series analysis, especially in cases where multicollinearity or overfitting is a concern.
+- It helps in stabilizing coefficients and preventing overfitting due to correlated predictors in time-series datasets.
+
+Ridge Regression offers a way to mitigate multicollinearity and overfitting, making it beneficial in scenarios where these issues affect the performance of traditional regression models.
