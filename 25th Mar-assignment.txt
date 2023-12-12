@@ -1,0 +1,58 @@
+
+### Flight Price Dataset
+
+#### Q1: Loading the Dataset and Checking Dimensions
+You'd start by loading the dataset into a Pandas DataFrame and using the `shape` attribute to check the number of rows and columns.
+
+```python
+import pandas as pd
+
+# Load dataset
+flight_data = pd.read_csv('flight_price_dataset.csv')
+
+# Check dimensions
+print(flight_data.shape)  # This will display the number of rows and columns
+```
+
+#### Q2: Distribution of Flight Prices
+To visualize the distribution of flight prices, you can create a histogram.
+
+```python
+import matplotlib.pyplot as plt
+
+# Create histogram
+plt.hist(flight_data['Price'], bins=20, color='skyblue')
+plt.xlabel('Flight Prices')
+plt.ylabel('Frequency')
+plt.title('Distribution of Flight Prices')
+plt.show()
+```
+
+#### Q3: Range of Prices
+You can find the minimum and maximum prices using Pandas' `min()` and `max()` functions.
+
+```python
+min_price = flight_data['Price'].min()
+max_price = flight_data['Price'].max()
+
+print(f"Minimum price: {min_price}")
+print(f"Maximum price: {max_price}")
+```
+
+#### Q4: Price Variation by Airline
+A boxplot can effectively show the price variation across different airlines.
+
+```python
+plt.figure(figsize=(10, 6))
+plt.boxplot([flight_data[flight_data['Airline'] == airline]['Price'] for airline in flight_data['Airline'].unique()],
+            labels=flight_data['Airline'].unique())
+plt.xticks(rotation=90)
+plt.xlabel('Airline')
+plt.ylabel('Price')
+plt.title('Flight Prices by Airline')
+plt.show()
+```
+
+For the remaining questions, the analysis would involve similar approaches of data visualization, descriptive statistics, and possibly regression or correlation analysis to identify trends, missing values, outliers, and relationships among features in the dataset. The methods used here are illustrative; you might need to adjust them based on the specific dataset and analysis requirements.
+
+If you have access to the dataset in a Jupyter Notebook or any Python environment, you can execute these code snippets after loading the dataset into a DataFrame.
