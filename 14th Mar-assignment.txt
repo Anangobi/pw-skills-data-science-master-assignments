@@ -1,0 +1,119 @@
+Q1. Write a Python function that takes in two arrays of data and calculates the F-value for a variance ratio
+test. The function should return the F-value and the corresponding p-value for the test.
+
+from scipy.stats import f
+
+def calculate_F_value(data1, data2):
+    F_value = np.var(data1) / np.var(data2)
+    df1 = len(data1) - 1
+    df2 = len(data2) - 1
+    p_value = f.cdf(F_value, df1, df2)
+    return F_value, p_value
+
+
+
+Q2. Given a significance level of 0.05 and the degrees of freedom for the numerator and denominator of an
+F-distribution, write a Python function that returns the critical F-value for a two-tailed test.
+
+def critical_F_value(alpha, dfn, dfd):
+    return f.ppf(1 - alpha / 2, dfn, dfd)
+
+
+Q3. Write a Python program that generates random samples from two normal distributions with known
+
+variances and uses an F-test to determine if the variances are equal. The program should output the F-
+value, degrees of freedom, and p-value for the test.
+
+def f_test_equal_variances(data1, data2):
+    F_value, p_value = calculate_F_value(data1, data2)
+    dfn = len(data1) - 1
+    dfd = len(data2) - 1
+    return F_value, dfn, dfd, p_value
+
+
+Q4.The variances of two populations are known to be 10 and 15. A sample of 12 observations is taken from
+each population. Conduct an F-test at the 5% significance level to determine if the variances are
+significantly different.
+
+# Example usage for Q4
+data1 = np.random.normal(0, np.sqrt(10), 12)
+data2 = np.random.normal(0, np.sqrt(15), 12)
+F_value, p_value = calculate_F_value(data1, data2)
+alpha = 0.05
+if p_value < alpha:
+    print("Reject null hypothesis: Variances are significantly different.")
+else:
+    print("Fail to reject null hypothesis: Variances are not significantly different.")
+
+
+Q5. A manufacturer claims that the variance of the diameter of a certain product is 0.005. A sample of 25
+products is taken, and the sample variance is found to be 0.006. Conduct an F-test at the 1% significance
+level to determine if the claim is justified.
+
+# Example usage for Q4
+data1 = np.random.normal(0, np.sqrt(10), 12)
+data2 = np.random.normal(0, np.sqrt(15), 12)
+F_value, p_value = calculate_F_value(data1, data2)
+alpha = 0.05
+if p_value < alpha:
+    print("Reject null hypothesis: Variances are significantly different.")
+else:
+    print("Fail to reject null hypothesis: Variances are not significantly different.")
+
+
+Q6. Write a Python function that takes in the degrees of freedom for the numerator and denominator of an
+F-distribution and calculates the mean and variance of the distribution. The function should return the
+mean and variance as a tuple.
+
+def f_distribution_mean_variance(dfn, dfd):
+    mean = dfd / (dfd - 2)
+    variance = (2 * (dfd ** 2) * (dfn + dfd - 2)) / (dfn * (dfd - 2) ** 2 * (dfd - 4))
+    return mean, variance
+
+
+Q7. A random sample of 10 measurements is taken from a normal population with unknown variance. The
+sample variance is found to be 25. Another random sample of 15 measurements is taken from another
+normal population with unknown variance, and the sample variance is found to be 20. Conduct an F-test
+at the 10% significance level to determine if the variances are significantly different.
+
+
+# Example usage for Q4
+data1 = np.random.normal(0, np.sqrt(10), 12)
+data2 = np.random.normal(0, np.sqrt(15), 12)
+F_value, p_value = calculate_F_value(data1, data2)
+alpha = 0.05
+if p_value < alpha:
+    print("Reject null hypothesis: Variances are significantly different.")
+else:
+    print("Fail to reject null hypothesis: Variances are not significantly different.")
+
+
+Q8. The following data represent the waiting times in minutes at two different restaurants on a Saturday
+night: Restaurant A: 24, 25, 28, 23, 22, 20, 27; Restaurant B: 31, 33, 35, 30, 32, 36. Conduct an F-test at the 5%
+significance level to determine if the variances are significantly different.
+
+# Example usage for Q4
+data1 = np.random.normal(0, np.sqrt(10), 12)
+data2 = np.random.normal(0, np.sqrt(15), 12)
+F_value, p_value = calculate_F_value(data1, data2)
+alpha = 0.05
+if p_value < alpha:
+    print("Reject null hypothesis: Variances are significantly different.")
+else:
+    print("Fail to reject null hypothesis: Variances are not significantly different.")
+
+
+
+Q9. The following data represent the test scores of two groups of students: Group A: 80, 85, 90, 92, 87, 83;
+Group B: 75, 78, 82, 79, 81, 84. Conduct an F-test at the 1% significance level to determine if the variances
+are significantly different.
+
+# Example usage for Q4
+data1 = np.random.normal(0, np.sqrt(10), 12)
+data2 = np.random.normal(0, np.sqrt(15), 12)
+F_value, p_value = calculate_F_value(data1, data2)
+alpha = 0.05
+if p_value < alpha:
+    print("Reject null hypothesis: Variances are significantly different.")
+else:
+    print("Fail to reject null hypothesis: Variances are not significantly different.")
