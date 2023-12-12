@@ -1,0 +1,43 @@
+Absolutely, let's delve into linear regression and related concepts:
+
+### Q1: Simple Linear Regression vs. Multiple Linear Regression
+- **Simple Linear Regression**: Involves one predictor variable to predict a target. Example: Predicting house prices based on square footage.
+- **Multiple Linear Regression**: Utilizes multiple predictor variables to predict the target. Example: Predicting house prices using square footage, number of bedrooms, and location.
+
+### Q2: Assumptions of Linear Regression
+- **Assumptions**:
+  1. Linearity: Relationship between predictors and target is linear.
+  2. Independence: Residuals are independent.
+  3. Homoscedasticity: Constant variance of residuals.
+  4. Normality: Residuals are normally distributed.
+- **Checking Assumptions**:
+  - Use residual plots, QQ plots, scatterplots, and statistical tests for normality to validate assumptions.
+
+### Q3: Interpretation of Slope and Intercept in Linear Regression
+- **Slope**: Represents the change in the target variable for a unit change in the predictor variable, holding other variables constant.
+- **Intercept**: Represents the predicted value of the target when all predictors are zero.
+- **Example**: In predicting house prices, the slope might indicate the increase in price per square foot, while the intercept could be the base price when square footage is zero.
+
+### Q4: Gradient Descent in Machine Learning
+- **Concept**: An optimization algorithm used to minimize the error (cost) function by adjusting model parameters iteratively.
+- **Usage**: It's used in training machine learning models, including linear regression, by updating coefficients to reach the optimal solution that minimizes the loss function.
+
+### Q5: Multiple Linear Regression Model
+- **Difference**: Multiple linear regression involves multiple predictor variables to predict a target, unlike simple linear regression, which uses only one predictor.
+- **Usage**: It allows modeling more complex relationships between multiple predictors and the target variable.
+
+### Q6: Multicollinearity in Multiple Linear Regression
+- **Concept**: Occurs when predictor variables are highly correlated with each other.
+- **Detection**: Methods like correlation matrices, variance inflation factor (VIF), or eigenvalues of the correlation matrix can help detect multicollinearity.
+- **Addressing**: Methods include dropping correlated variables, feature selection, or regularization techniques like Ridge regression.
+
+### Q7: Polynomial Regression Model vs. Linear Regression
+- **Polynomial Regression**: Uses higher-degree polynomial functions (quadratic, cubic) to fit curved relationships between predictors and the target, while linear regression fits linear relationships.
+- **Difference**: Polynomial regression models more complex relationships, capturing nonlinear patterns that linear regression cannot.
+
+### Q8: Advantages and Disadvantages of Polynomial Regression
+- **Advantages**: Captures nonlinear relationships, provides a better fit for certain data.
+- **Disadvantages**: Can be prone to overfitting, especially with higher-degree polynomials. May not generalize well to unseen data.
+- **Usage**: Preferred when data exhibits nonlinear patterns that linear regression cannot capture effectively.
+
+Understanding these concepts helps in choosing the appropriate regression models and interpreting their outcomes based on data characteristics and modeling objectives.
