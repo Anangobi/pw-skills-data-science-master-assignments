@@ -1,0 +1,69 @@
+QD- E=plain thK followin* with an K=amplK-F
+C) Artificial IntKlli*KncJ
+<) MachinK LKarnin,
+I) DKKp LKarning
+
+There are primarily three types:
+
+Supervised Learning
+Unsupervised Learning
+Semi-Supervised Learning
+
+
+
+Q2- What is supKrvisKd lKarnin*? List somK K=amplKs of supKrvisKd lKarnin*.
+
+Supervised learning involves training a model on labeled data, where the input and the desired output are provided.
+Examples:
+
+Classification: Predicting whether an email is spam or not.
+Regression: Predicting house prices based on features like area, location, etc.
+
+Q3- GWhat is unsupKrvisKd lKarnin*? List somK K=amplKs of unsupKrvisKd lKarnin*.
+
+Unsupervised learning deals with unlabeled data, aiming to find hidden patterns or intrinsic structures within it.
+Examples:
+
+Clustering: Grouping similar customers based on purchasing behavior.
+Dimensionality Reduction: Reducing the number of variables while retaining meaningful information.
+
+Q4- What is thK diffKrKncK bKtwKKn AI, ML, DL, and DS?
+
+AI (Artificial Intelligence): The broader concept of creating machines that can simulate human intelligence.
+ML (Machine Learning): A subset of AI where algorithms learn patterns from data and make predictions.
+DL (Deep Learning): A subset of ML using neural networks with many layers to learn representations of data.
+DS (Data Science): The field that deals with extracting insights and knowledge from data using various techniques, including ML.
+
+Q5- What arK thK main diffKrKncKs bKtwKKn supKrvisKd, unsupKrvisKd, and sKmi-supKrvisKd lKarnin*?
+
+Supervised Learning: Requires labeled data for training.
+Unsupervised Learning: Uses unlabeled data to find hidden patterns.
+Semi-Supervised Learning: Combination of both; uses labeled and unlabeled data during training.
+
+Q6- What is train, tKst and validation split? E=plain thK importancK of Kach tKrm.
+
+Train: Data used to train the model.
+Test: Data used to evaluate the model's performance.
+Validation: Subset of the training data used to tune hyperparameters and avoid overfitting.
+
+Q7- How can unsupKrvisKd lKarnin* bK usKd in anomaly dKtKction?
+
+Unsupervised learning can detect anomalies by identifying patterns that deviate significantly from the norm within the data.
+
+
+Q8- List down somK commonly usKd supKrvisKd lKarnin* al*orithms and unsupKrvisKd lKarnin*
+al*orithms.
+
+Supervised Learning Algorithms:
+
+Linear Regression
+Decision Trees
+Random Forest
+Support Vector Machines (SVM)
+Neural Networks
+Unsupervised Learning Algorithms:
+
+K-Means Clustering
+Hierarchical Clustering
+Principal Component Analysis (PCA)
+t-Distributed Stochastic Neighbor Embedding (t-SNE)
