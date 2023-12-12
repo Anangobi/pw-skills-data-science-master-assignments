@@ -1,0 +1,48 @@
+Absolutely, let's delve into regression evaluation metrics and regularization techniques:
+
+### Q1: R-squared in Linear Regression
+- **Concept**: Measures the proportion of variance in the dependent variable explained by the independent variables.
+- **Calculation**: \(R^2 = 1 - \frac{{\text{SSR}}}{{\text{SST}}}\), where SSR is the sum of squared residuals and SST is the total sum of squares.
+- **Interpretation**: R-squared ranges from 0 to 1, where 1 indicates a perfect fit.
+
+### Q2: Adjusted R-squared
+- **Definition**: Adjusted R-squared penalizes excessive use of predictors to prevent overfitting.
+- **Calculation**: Adjusted \(R^2 = 1 - \frac{{(1 - R^2)(n - 1)}}{{(n - k - 1)}}\), where n is the sample size and k is the number of predictors.
+- **Difference**: Adjusted R-squared accounts for the number of predictors, penalizing excessive variables compared to R-squared.
+
+### Q3: Use of Adjusted R-squared
+- **Appropriateness**: Adjusted R-squared is preferred when comparing models with different numbers of predictors. It penalizes models with excessive predictors and provides a more realistic measure of model fit.
+
+### Q4: Regression Evaluation Metrics - RMSE, MSE, MAE
+- **RMSE (Root Mean Squared Error)**: Measures the average magnitude of errors between predicted and observed values. Calculated as the square root of the mean of squared errors.
+- **MSE (Mean Squared Error)**: Measures the average of squared errors between predicted and observed values.
+- **MAE (Mean Absolute Error)**: Measures the average of absolute errors between predicted and observed values.
+- **Interpretation**: Lower values for these metrics indicate better model performance.
+
+### Q5: Advantages and Disadvantages of Evaluation Metrics
+- **Advantages**:
+  - RMSE and MSE emphasize larger errors, making them sensitive to outliers.
+  - MAE is more robust to outliers.
+- **Disadvantages**:
+  - RMSE and MSE can be heavily influenced by outliers, affecting model evaluation.
+
+### Q6: Lasso Regularization vs. Ridge Regularization
+- **Lasso Regularization**: Uses L1 regularization penalty, forcing some coefficients to become exactly zero, effectively performing feature selection.
+- **Difference**: Ridge tends to shrink coefficients towards zero, but not necessarily to zero as in Lasso.
+- **Appropriateness**: Lasso is preferred when feature selection is essential, while Ridge might be used when all features are crucial but need shrinkage.
+
+### Q7: Role of Regularized Linear Models in Preventing Overfitting
+- **Concept**: Regularization adds a penalty term to the regression equation, preventing coefficients from becoming overly large, thereby reducing overfitting.
+- **Example**: In Ridge and Lasso regression, the penalty term controls the complexity of the model, preventing overfitting to the training data.
+
+### Q8: Limitations of Regularized Linear Models
+- **Limitations**: Regularization may struggle when predictors have a low signal-to-noise ratio or when the relationship between predictors and target is highly nonlinear.
+
+### Q9: Comparing Models Using Different Metrics
+- **Choice**: The selection depends on priorities; RMSE emphasizes larger errors, while MAE provides an average of absolute errors. Model A may be more sensitive to larger errors, whereas Model B focuses on the average magnitude of errors.
+
+### Q10: Comparing Regularized Models
+- **Choice**: It depends on the context; Ridge shrinks coefficients towards zero but does not eliminate them, while Lasso can force some coefficients to become exactly zero, performing feature selection. 
+- **Trade-offs**: Ridge might preserve more predictors, whereas Lasso can simplify the model by selecting essential predictors.
+
+In practice, the choice of metric or regularization method depends on the problem, the importance of different error types, and the interpretability of the model.
