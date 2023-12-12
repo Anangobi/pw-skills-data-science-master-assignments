@@ -1,0 +1,32 @@
+Q1: Overfitting and Underfitting
+Overfitting: Occurs when a model learns both the signal and noise in the training data, resulting in poor generalization to new data. Consequences include poor performance on unseen data.
+Underfitting: Happens when a model is too simple to capture the underlying patterns in the data, leading to poor performance both in training and on new data.
+Q2: Reducing Overfitting
+Methods to reduce overfitting:
+Cross-validation
+Feature selection/reduction
+Regularization techniques (like L1/L2 regularization)
+Early stopping in training
+Q3: Underfitting
+Underfitting: Occurs when a model is too simple to capture the underlying patterns in the data. It may happen due to inadequate features, too few parameters, or insufficient training.
+Scenarios: Using a linear model for non-linear data, using too few features for complex data.
+Q4: Bias-Variance Tradeoff
+Bias: Error from erroneous assumptions in the learning algorithm. High bias leads to underfitting.
+Variance: Error due to too much complexity in the learning algorithm. High variance leads to overfitting.
+Tradeoff: Decreasing bias usually increases variance and vice versa, affecting model performance.
+Q5: Detecting Overfitting and Underfitting
+Overfitting Detection:
+High difference in performance between training and validation sets.
+Poor generalization on unseen data.
+Underfitting Detection:
+Poor performance on both training and validation sets.
+Q6: Bias vs. Variance
+High Bias Model: Simplistic models (e.g., linear regression on complex data).
+High Variance Model: Overly complex models (e.g., high-degree polynomial on limited data).
+Performance Difference: High bias models have low performance on training and testing; high variance models perform well on training but poorly on testing.
+Q7: Regularization in ML
+Regularization: Technique to prevent overfitting by adding a penalty term to the loss function.
+Common Techniques:
+L1 (Lasso) and L2 (Ridge) regularization: Adds penalty terms to the model coefficients.
+Dropout: Randomly deactivating neurons during training in neural networks.
+Early Stopping: Halting training early to avoid overfitting.
