@@ -1,0 +1,34 @@
+Q1: Filter Method in Feature Selection
+Definition: Filter methods evaluate the relevance of features independently of the chosen machine learning algorithm.
+Working: It selects features based on statistical measures like correlation, variance, or information gain.
+
+Q2: Difference between Filter and Wrapper Methods
+Filter Method: Evaluates features independently, relies on statistical measures.
+Wrapper Method: Involves evaluating feature subsets by training models iteratively.
+
+Q3: Techniques in Embedded Feature Selection
+Lasso Regression: Penalizes coefficients, leading to feature selection.
+Decision Trees: Feature importance calculated during tree construction.
+Regularized models (e.g., ElasticNet): Inherently perform feature selection during training.
+
+Q4: Drawbacks of Filter Method
+Independence: Doesn’t consider feature dependencies.
+Model Performance: Might not optimize the performance of specific models.
+Selectivity: Can miss subtle relationships between features.
+
+Q5: When to Prefer Filter over Wrapper Method
+Large Datasets: Filter methods are computationally efficient for large datasets.
+Preprocessing: Initial feature reduction before using more computationally intensive methods.
+
+Q6: Using Filter Method for Customer Churn Prediction
+Correlation Analysis: Identify features correlated with churn.
+Variance Thresholding: Remove features with low variance.
+Information Gain or Mutual Information: Select features with high relevance to churn.
+
+Q7: Using Embedded Method for Soccer Match Outcome Prediction
+Lasso Regression: Utilize coefficients to identify important player statistics or team rankings.
+Decision Trees: Analyze feature importance scores to select relevant statistics.
+
+Q8: Using Wrapper Method for House Price Prediction
+Recursive Feature Elimination (RFE): Train a model and recursively remove the least important feature.
+Forward/Backward Selection: Iteratively add or remove features based on model performance.
