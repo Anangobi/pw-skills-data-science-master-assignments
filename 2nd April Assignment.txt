@@ -1,0 +1,34 @@
+1. **Grid Search CV**:
+   - *Purpose*: Grid Search CV (Cross-Validation) is used to tune hyperparameters by exhaustively searching through a specified parameter grid to find the best combination that yields the highest model performance.
+   - *Working*: It evaluates each combination of hyperparameters by performing cross-validation on the training data, using a scoring metric (like accuracy, F1-score, etc.), and selects the parameters that give the best performance.
+
+2. **Grid Search CV vs. Randomized Search CV**:
+   - *Grid Search CV*: Exhaustively searches through all specified hyperparameter combinations. Suitable for smaller hyperparameter spaces.
+   - *Randomized Search CV*: Samples a fixed number of hyperparameter combinations randomly. Suitable for larger hyperparameter spaces, as it reduces the computational cost and can be more efficient in finding good hyperparameters.
+
+3. **Data Leakage**:
+   - *Problem*: Data leakage occurs when information from outside the training dataset is used to create the model, leading to overly optimistic performance estimates or incorrect modeling.
+   - *Example*: Using features that are not available at prediction time (like future information) can lead to data leakage. For instance, using target-related information that wouldn't be available during real-world predictions.
+
+4. **Preventing Data Leakage**:
+   - *Techniques*: Carefully split datasets into training/validation/test sets after any preprocessing steps. Ensure that features used for modeling are based only on the training set. Use pipelines to encapsulate preprocessing steps and avoid information leakage from the validation or test sets.
+
+5. **Confusion Matrix**:
+   - *Purpose*: A confusion matrix is a table that visualizes the performance of a classification model. It shows the counts of true positive, true negative, false positive, and false negative predictions made by the model.
+
+6. **Precision and Recall**:
+   - *Precision*: The ratio of true positive predictions to the total predicted positives (TP / (TP + FP)). It measures the accuracy of positive predictions.
+   - *Recall*: The ratio of true positive predictions to the total actual positives (TP / (TP + FN)). It measures the ability of the model to find all the positive instances.
+
+7. **Interpreting Confusion Matrix**:
+   - *Errors Identification*: Diagonal elements represent correct predictions (true positives and true negatives), while off-diagonal elements represent incorrect predictions (false positives and false negatives). Examining these helps understand the types of errors made by the model.
+
+8. **Common Metrics from Confusion Matrix**:
+   - *Accuracy*: (TP + TN) / (TP + TN + FP + FN).
+   - *Precision*, *Recall*, *F1-Score*: Calculated using the values in the confusion matrix.
+
+9. **Accuracy and Confusion Matrix**:
+   - *Relationship*: Accuracy is the ratio of correct predictions to the total number of predictions. It's related to the values in the diagonal of the confusion matrix.
+
+10. **Using Confusion Matrix for Bias Detection**:
+    - Examining the distribution of errors across different classes helps identify biases or limitations. Skewed misclassifications towards specific classes might indicate biases in the model towards certain features or classes.
