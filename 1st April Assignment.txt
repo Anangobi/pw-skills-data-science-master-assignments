@@ -1,0 +1,28 @@
+1. **Difference between Linear Regression and Logistic Regression**:
+   - *Linear Regression*: Predicts continuous numerical values. It's used to model relationships between dependent and independent variables. Example: Predicting house prices based on square footage.
+   - *Logistic Regression*: Used for binary classification problems. It predicts the probability of an instance belonging to a particular class (0 or 1). Example: Predicting whether an email is spam (1) or not spam (0) based on various features.
+
+2. **Cost Function and Optimization in Logistic Regression**:
+   - *Cost Function*: Logistic regression uses the logistic loss (or log loss) function, also known as the cross-entropy loss function. It measures the difference between predicted probabilities and actual class labels.
+   - *Optimization*: It's optimized using techniques like gradient descent or more advanced optimization algorithms to minimize the cost function.
+
+3. **Regularization in Logistic Regression**:
+   - *Regularization*: Helps prevent overfitting by penalizing large coefficients. It adds a regularization term to the cost function, controlling the model complexity.
+   - *Types of Regularization*: L1 (Lasso) regularization penalizes the absolute sum of coefficients, encouraging sparsity. L2 (Ridge) regularization penalizes the squared sum of coefficients, keeping all features but reducing their impact.
+
+4. **ROC Curve for Model Evaluation**:
+   - *ROC Curve*: Receiver Operating Characteristic curve plots the true positive rate (sensitivity) against the false positive rate (1-specificity) at various threshold settings.
+   - *Evaluation*: A higher area under the ROC curve (AUC-ROC) indicates better model performance, depicting the trade-off between true positive rate and false positive rate.
+
+5. **Feature Selection Techniques in Logistic Regression**:
+   - *Forward or Backward Selection*: Sequentially add or remove features based on their contribution to the model.
+   - *Regularization*: L1 regularization can automatically perform feature selection by shrinking some coefficients to zero.
+   - *Feature Importance*: Techniques like permutation importance or information gain can help identify important features.
+
+6. **Handling Imbalanced Datasets**:
+   - *Strategies*: Techniques like oversampling the minority class, undersampling the majority class, or using synthetic data generation methods like SMOTE (Synthetic Minority Over-sampling Technique) can address class imbalance.
+
+7. **Common Challenges in Logistic Regression**:
+   - *Multicollinearity*: When independent variables are highly correlated, it can affect model stability. Address it by removing correlated variables or using regularization techniques.
+   - *Convergence Issues*: If the optimization algorithm doesn't converge, adjusting learning rates or using different optimization methods might help.
+   - *Outliers*: Outliers can influence logistic regression. Consider removing or transforming outliers for better model performance.
