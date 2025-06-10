@@ -1,0 +1,76 @@
+Q1. Explain the concept of precision and recall in the context of classification models.
+
+Precision
+Definition: Precision is the ratio of correctly predicted positive observations to the total predicted positive observations.
+Formula:
+Precision = True Positives / (True Positives + False Positives)
+Interpretation:
+Precision answers the question: Of all the instances the model predicted as positive, how many were actually positive?
+Use case:
+High precision is important when the cost of a false positive is high (e.g., spam detection).
+Recall
+Definition: Recall (also called Sensitivity or True Positive Rate) is the ratio of correctly predicted positive observations to all actual positive observations.
+Formula:
+Recall = True Positives / (True Positives + False Negatives)
+Interpretation:
+Recall answers the question: Of all the actual positive instances, how many did the model correctly identify?
+Use case:
+High recall is important when the cost of a false negative is high (e.g., disease screening).
+
+
+Q2. What is the F1 score and how is it calculated? How is it different from precision and recall?
+
+The F1 score is the harmonic mean of precision and recall.
+Formula:
+F1 = 2 * (Precision * Recall) / (Precision + Recall)
+Difference: Precision measures the correctness of positive predictions, recall measures the ability to find all positives, and F1 balances both, especially useful when classes are imbalanced.
+Q3. What is ROC and AUC, and how are they used to evaluate the performance of classification models?
+
+ROC (Receiver Operating Characteristic) curve plots the True Positive Rate (Recall) against the False Positive Rate at various thresholds.
+AUC (Area Under the Curve) quantifies the overall ability of the model to discriminate between classes; higher AUC means better performance.
+Q4. How do you choose the best metric to evaluate the performance of a classification model?
+
+It depends on the problem:
+Use accuracy for balanced classes.
+Use precision when false positives are costly.
+Use recall when false negatives are costly.
+Use F1 score for imbalanced classes.
+Use AUC-ROC for overall discrimination ability.
+What is multiclass classification and how is it different from binary classification?
+
+Binary classification predicts one of two classes (e.g., spam or not spam).
+Multiclass classification predicts one of three or more classes (e.g., classifying emails as work, personal, or spam).
+Q5. Explain how logistic regression can be used for multiclass classification.
+
+Logistic regression can be extended to multiclass using:
+One-vs-Rest (OvR): Train one classifier per class.
+Softmax (Multinomial Logistic Regression): Directly predicts probabilities for each class.
+Q6. Describe the steps involved in an end-to-end project for multiclass classification.
+
+Data collection
+Data preprocessing (cleaning, encoding, splitting)
+Feature engineering
+Model selection and training
+Model evaluation (using appropriate metrics)
+Hyperparameter tuning
+Model deployment
+Monitoring and maintenance
+Q7. What is model deployment and why is it important?
+
+Model deployment is making a trained model available for use in production (e.g., via an API or application).
+It is important because it allows real users or systems to benefit from the model’s predictions.
+Q8. Explain how multi-cloud platforms are used for model deployment.
+
+Multi-cloud deployment means deploying models across multiple cloud providers (e.g., AWS, Azure, GCP).
+This can improve reliability, flexibility, and avoid vendor lock-in.
+Q9. Discuss the benefits and challenges of deploying machine learning models in a multi-cloud environment.
+Benefits:
+
+Increased reliability and uptime
+Flexibility to use best services from each provider
+Avoid vendor lock-in
+Challenges:
+
+Increased complexity in management and monitoring
+Data consistency and security issues
+Higher operational costs and integration effort
